@@ -1,0 +1,19 @@
+# Cloned CV repo — tracked separately at github.com/EricPutney/Eric-Putney-CV
+Eric-Putney-CV/
+
+# Editor / IDE
+.idea
+.vscode
+
+# Shell / environment dotfiles
+.bash_profile
+.bashrc
+.profile
+.zprofile
+.zshrc
+.gitconfig
+
+# Tooling
+.mcp.json
+.ripgreprc
+.gitmodules

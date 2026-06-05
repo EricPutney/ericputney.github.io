@@ -61,15 +61,20 @@
 						<h2>eric putney</h2>
 					</header>
 						<h3>about me</h3>
-						<p>Grew up in Vancouver, Washington. Lived in Albuquerque, New Mexico for undergrad and moved to
-							New Brunswick, New Jersey for graduate school. I spend a lot of my time thinking about
-							physics, but I also like to build things and explore the wide world of the open source
-							community.
+						<p> I grew up in Vancouver WA, across the river from Portland. In 2016, I moved to Albuquerque NM
+							to get my bachelors in Physics at UNM, and graduated in 2020. I recently defended my PhD thesis at Rutgers University,
+							in New Brunswick NJ, on building ML models for measuring dark matter in our galaxy.
 							<br><br>
-							You can reach me at eputney@physics.rutgers.edu, or on mastodon at <a
-								href="https://mastodon.social/@eputney" target="_blank">eputney@mastodon.social</a>. You
-							can find my CV <a href="attachments/Eric_Putney_CV.pdf" target="_blank">
-								here:</a>
+							Generally speaking, I am interested in any and all probes of dark matter physics. We know dark
+							matter exists, but I want to know what it is! I mainly focus on astronomical and cosmological
+							probes of dark matter physics, where there is tons of open data and analyses to be done.
+							<br><br>
+							In my free time I listen to music, work on my home lab, and play video games! Every day, I try
+							to make my life a little bit more sustainable and independent from large corporate services. It's
+							a long and often non-linear process, but it makes me feel good.
+							<br><br>
+							You can reach me at eputney@physics.rutgers.edu, and can find my CV
+							<a href="attachments/cv_4.pdf" target="_blank"> here:</a>
 						</p>
 				</div>
 			</section>
@@ -77,25 +82,84 @@
 			<section id="research">
 				<div class="container">
 					<h3>research</h3>
-					<p>I use astronomy to probe the properties of <em>dark matter</em> - a material we know
-						next to nothing about - yet we know that it pulled galaxies together and built the universe as
-						we
-						see it.
+					<p>Much of my work on dark matter has focused on its signatures in the Milky Way. Dark matter halos formed
+						in the early universe pulled in visible matter to make stars, galaxies, etc. Today, our Milky Way Galaxy
+						sits inside a dark matter halo, giving us an incredibly laboratory to study it! We do this in two ways:
 						<br><br>
-						My Ph.D. adviser is Dr. <a href="http://www.physicsmatt.com">Matthew Buckley</a>.
-						We work with stellar kinematic data from the Gaia space observatory to build the most accurate
-						model of our local region of the galaxy. Recently, we have been interested in developing novel
-						machine learning techniques to learn the phase space distribution of stars in a completely
-						data-driven way. This assumption-free model of the phase space distribution can be used to solve
-						many problems in galactic dynamics in a new light, such as new accurate measurements of the
-						local
-						dark matter density.
+						*Direct* detection: Look for scattering of dark matter particles off of visible matter. This depends on how
+						much dark matter you expect there to be in a room at any given time. I measured this local density a few times,
+						first in <a href="https://arxiv.org/abs/2305.13358">2023</a> using a relatively crude solution to the six-dimensional
+						Boltzmann equation, and again in <a href="https://arxiv.org/abs/2512.09989">2025</a>, where we correct for
+						dust and provide a 3D map of the local potential.
+						<br><br>
+						*Indirect* detection: Looking for dark matter turning into some kind of visible "Standard Model" messenger,
+						this could be light, cosmic rays, or neutrinos. I am interested in studying the Galactic Center GeV Excess,
+						a long documented excess of gamma rays being emitted from the center of the Milky Way that might be produced
+						by dark matter annihilation!
 					</p>
 
 					<h4><a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-6775-5032&sort=date+desc">
 							papers: (click for all NASA/ADS listings)</a></h4>
 					<p>
 					<ol>
+						<!-- ClearPotential -->
+						<li> May 2023 <a href="https://arxiv.org/abs/2512.09989">"ClearPotential"</a>
+							<ul>
+								<li>
+									Authors: Eric Putney, David Shih, Sung Hak Lim, Matthew R. Buckley
+								</li>
+								<li>
+									Links: <a href="https://arxiv.org/abs/2512.09989">arXiv:2512.09989</a>
+								</li>
+								<li>
+									Summary: Using our powerful dust-correction technique developed in <a href="https://arxiv.org/abs/2412.14236">arXiv:2412.14236</a>,
+									ClearPotential upgrades the measurement of the local potential done in <a href="https://arxiv.org/abs/2305.13358">arXiv:2305.13358</a>
+									to measure the unbiased three-dimension potential and mass density of the local Milky Way.
+									This is a first-of-its-kind 3D map of dark matter, which is a powerful tool! We measure the local
+									density of dark matter to be about 1/3 a proton/cubic centimeter (that's the amount of dark matter
+									passing through you right now!), and are able to place constraints on additional components of dark structure
+									like a dark disk. We try to constrain the global structure of the Milky Way's dark matter halo, and find some
+									interesting results. Let's look out for Gaia DR4, with new data we'll be able to expand this map across
+									much more of our Galaxy!
+								</li>
+							</ul>
+						</li>
+						<!-- Sweeping the Dust Away -->
+						<li> December 2024 <a href="https://arxiv.org/abs/2412.14236">"Sweeping the Dust Away"</a>
+							<ul>
+								<li>
+									Authors: Eric Putney, David Shih, Sung Hak Lim, Matthew R. Buckley
+								</li>
+								<li>
+									Links: <a href="https://arxiv.org/abs/2412.14236">arXiv:2412.14236</a>
+								</li>
+								<li>
+									Summary: Companion to ClearPotential! Optical surveys like Gaia are blocked by dust in the midplane
+									of the Milky Way. When we measure the phase space of nearby stars, dust extinction *biases* this
+									measurement and gives us incorrect solutions to the Boltzmann equation. However, the Boltzmann equation
+									is just a continuity equation for phase space... What if you floated this missing fraction of stars
+									as a learnable field, and find the solution that best obeys this equilibrium equation? Applying this to
+									Gaia DR3, we are able to "Sweep" the dust out of the way and estimate the unbiased phase space density
+									and local potential of the Milky Way.
+								</li>
+							</ul>
+						</li>
+						<!-- Lim 2023 -->
+						<li> May 2023 <a href="https://arxiv.org/abs/2305.13358">"Mapping Dark Matter in the Milky Way using
+								Normalizing Flows and Gaia DR3"</a>
+							<ul>
+								<li>
+									Authors: Sung Hak Lim, Eric Putney, Matthew R. Buckley, David Shih
+								</li>
+								<li>
+									Links: <a href="https://arxiv.org/abs/2305.13358">arXiv:2305.13358</a>
+								</li>
+								<li>
+									Summary: We applied the methods developed in <a href="https://arxiv.org/abs/2205.01129">arXiv:2205.01129</a> to <a href="https://www.cosmos.esa.int/web/gaia/dr3">Gaia Data Release 3 (DR3)</a>, the most complete survey of stars in our galactic neighborhood. We measured a local dark matter density of about .47 GeV/cc, or about half of a proton of dark matter per cubic centimeter!
+								</li>
+							</ul>
+						</li>
+						<!-- Buckley 2022 -->
 						<li> May 2022 <a href="https://arxiv.org/abs/2205.01129">"Measuring Galactic Dark Matter through
 								Unsupervised Machine Learning"</a>
 							<ul>
@@ -111,27 +175,81 @@
 								</li>
 							</ul>
 						</li>
-						<li> May 2023 <a href="https://arxiv.org/abs/2305.13358">"Mapping Dark Matter in the Milky Way using
-								Normalizing Flows and Gaia DR3"</a>
-							<ul>
-								<li>
-									Authors: Sung Hak Lim, Eric Putney, Matthew R. Buckley, David Shih
-								</li>
-								<li>
-									Links: <a href="https://arxiv.org/abs/2305.13358">arXiv:2305.13358</a>
-								</li>
-								<li>
-									Summary: We applied the methods developed in <a href="https://arxiv.org/abs/2205.01129">arXiv:2205.01129</a> to <a href="https://www.cosmos.esa.int/web/gaia/dr3">Gaia Data Release 3 (DR3)</a>, the most complete survey of stars in our galactic neighborhood. We measured a local dark matter density of about .47 GeV/cc, or about half of a proton of dark matter per cubic centimeter!
-								</li>
-							</ul>
-						</li>
+
 					</ol>
 				</p>
 				<h4>talks:</h4>
 				<p>
 					<ol>
 						<li>
-							<a href="attachments/pheno2023.pdf">"Measuring Dark Matter in the Solar Neighborhood using Normalizing Flows and Gaia DR3"</a> Phenomenology, May 9 2023
+							"Data Driven Methods for Measuring Galactic Dark Matter" Thesis Defense, Rutgers University, May 2026
+						</li>
+						<li>
+							"Efficient PINN Models of Cosmic Rays" Pheno 2026 Symposium, University of Pittsburgh, May 2026
+							(<a href="https://indico.global/event/16413/contributions/153841/">abstract</a>, <a href="https://indico.global/event/16413/contributions/153841/attachments/69756/135361/pheno_26_eputney_v1_1.pdf">slides</a>)
+						</li>
+						<li>
+							"ClearPotential: Learning the Dust-Corrected Potential of the Milky Way Using Flows" Poster, NeurIPS ML4PS 2025, December 2025
+							(<a href="https://inspirehep.net/literature/3089973">abstract</a>, <a href="https://ml4physicalsciences.github.io/2025/files/NeurIPS_ML4PS_2025_256.pdf">letter</a>, <a href="https://neurips.cc/media/PosterPDFs/NeurIPS%202025/123092.png">poster</a>)
+						</li>
+						<li>
+							"Gaia and Dark Matter" Cargese Summer School, IESC, July 2025
+							(<a href="https://indico.desy.de/event/43837/contributions/163524/">indico</a>)
+						</li>
+						<li>
+							"Model-free analyses of Gaia: mapping the local potential, dust, and dark matter" YITP Seminar, Stony Brook University, April 2025
+							(<a href="https://calendar.google.com/calendar/u/0/event?eid=N2R0bWU0bWUycXRkNGY0a2szZ2pzaDg5YXEgY2FsQG1heDIucGh5c2ljcy5zdW55c2IuZWR1">abstract</a>)
+						</li>
+						<li>
+							"Model-free analyses of Gaia: mapping the local potential, dust, and dark matter" Galaxy Hour, The Ohio State University, March 2025
+							(<a href="https://astronomy.osu.edu/events/galaxy-hour-eric-putney">abstract</a>)
+						</li>
+						<li>
+							"Machine Learning and Galactic Dynamics" Graduate Seminar, University of Cincinnati, March 2025
+						</li>
+						<li>
+							"Sweeping the Dust Away: An Unbiased Map of the Milky Way's Dark Matter and Gravitational Potential with Unsupervised Machine Learning" ML4Jets 2024, November 2024
+							(<a href="https://indico.cern.ch/event/1386125/contributions/6139683/">abstract</a>, <a href="https://indico.cern.ch/event/1386125/contributions/6139683/attachments/2961523/5208974/ML4Jets2024__Sweeping_the_Dust_Away__v1__Eric_Putney.pdf">slides</a>, <a href="https://indico.cern.ch/event/1386125/contributions/6139683/attachments/2961523/5223920/ML4Jets_2024_Putney.mp4">recording</a>)
+						</li>
+						<li>
+							"Sweeping the Dust Away: An unbiased map of the Milky Way's gravitational potential using unsupervised ML" DPF-PHENO 2024, University of Pittsburgh, May 2024
+							(<a href="https://indico.global/event/805/contributions/23676/">abstract</a>, <a href="https://indico.global/event/805/contributions/23676/attachments/11363/16830/Presentation%20Copy%20-%20Pheno%202024%20-%20Sweeping%20the%20Dust%20Away.pdf">slides</a>)
+						</li>
+						<li>
+							"Mapping Dark Matter in the Milky Way using Normalizing Flows and Gaia DR3" ML4Jets 2023, DESY, November 2023
+							(<a href="https://indico.cern.ch/event/1253794/contributions/5588628/">abstract</a>, <a href="https://indico.cern.ch/event/1253794/contributions/5588628/attachments/2746555/4779209/ML4Jets%202023%20-%20Flows%20for%20Gaia%20DR3%20-%20Presentation%20Copy.pdf">slides</a>)
+						</li>
+						<li>
+							"Measuring Galactic dark matter through unsupervised machine learning" Phenomenology 2023 Symposium, University of Pittsburgh, May 2023
+							(<a href="https://indico.cern.ch/event/1218225/contributions/5384882/">abstract</a>, <a href="https://indico.cern.ch/event/1218225/contributions/5384882/attachments/2643367/4574890/Measuring%20Galactic%20Dark%20Matter%20through%20Unsupervised%20Machine%20Learning%20-%20Gaia%20DR3.pdf">slides</a>)
+						</li>
+						<li>
+							"Measuring Galactic Dark Matter through Unsupervised Machine Learning" 241st AAS Meeting, Seattle WA, January 2023
+							(<a href="https://submissions.mirasmart.com/AAS241/Itinerary/PresentationDetail.aspx?evdid=2525">abstract</a>)
+						</li>
+						<li>
+							"What Dark Matter Halos Tell Us About Dark Matter" PhD Candidacy Exam, Rutgers University, November 2021
+							(<a href="https://docs.google.com/presentation/d/1hIRnsO_SA0K5iA_SBDT4XSWl0EFH5x8gOfFhm2WLPRY/edit?usp=sharing">slides</a>)
+						</li>
+						<li>
+							"Numerical Analysis of Collective Neutrino Oscillations in Dense Neutrino Media" Undergraduate Honors Thesis, University of New Mexico, April 2020
+							(<a href="https://docs.google.com/presentation/d/1ASJtMnLMl_vDvVYreC4gwaUiPOORhblyutP5QB5MJuQ/edit?usp=sharing">slides</a>, <a href="https://docs.google.com/presentation/d/1wdTRY_g22zeUvdElEYY-H9RCqCjt-0SJ/edit?usp=sharing&ouid=114863095497799954143&rtpof=true&sd=true">poster</a>)
+						</li>
+						<li>
+							"Laser Control for the Production of Excited Positronium in GBAR" CERN Summer School, August 2019
+							(<a href="https://indico.cern.ch/event/824965/contributions/3450101/attachments/1893575/3123357/Laser_Control_for_the_Production_of_Excited_Positronium_in_GBAR_-_CERN_REU_Final_Talk_-_Draft_3.pdf">slides</a>)
+						</li>
+						<li>
+							"Numerical Analysis of Collective Neutrino Oscillations in Core-Collapse Supernovae with Multidimensional Models" University of New Mexico Physics Day, April 2019
+							(<a href="https://docs.google.com/presentation/d/1ASJtMnLMl_vDvVYreC4gwaUiPOORhblyutP5QB5MJuQ/edit?usp=sharing">slides</a>)
+						</li>
+						<li>
+							"Precision Measurement of the 6S &rarr; 7P<sub>1/2</sub> Cesium Transition Radial Matrix Element via Simultaneous Absorption Spectroscopy" 2018 APS Four Corners, University of Utah, October 2018
+							(<a href="http://meetings.aps.org/Meeting/4CS18/Event/338507">abstract</a>, <a href="https://docs.google.com/presentation/d/1czJ4b71LwWKLmJ4kp8UobGaJ2dT0JGeJ4OHUD4gxwHc/edit?usp=sharing">slides</a>)
+						</li>
+						<li>
+							"Analysis of Diffusion of a Rhodium Adatom on a Tungsten (111) Surface" 2017 APS Four Corners, Colorado State University, October 2017
+							(<a href="http://meetings.aps.org/Meeting/4CF17/Event/311475">abstract</a>, <a href="https://docs.google.com/presentation/d/1sJDyw73beCHj6N3sXtj0bBZxNuse2EGa/edit?usp=sharing&ouid=114863095497799954143&rtpof=true&sd=true">poster</a>)
 						</li>
 					</ol>
 				</p>
