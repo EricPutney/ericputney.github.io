@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+<head>
+  {% include head.html %}
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  {% include sidebar.html %}
+  <main id="main" class="main">
+    {{ content }}
+    <footer class="footer">
+      <p>&copy; {{ site.time | date: "%Y" }} {{ site.author.name }}. Design adapted from <a href="https://html5up.net">HTML5 UP</a> (Read Only, CCA 3.0). <a href="https://github.com/{{ site.author.github }}/ericputney.github.io">Source on GitHub</a>.</p>
+    </footer>
+  </main>
+  <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
+</body>
+</html>

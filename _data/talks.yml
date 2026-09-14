@@ -1,0 +1,120 @@
+# One entry per talk, newest first. Source: your CV (June 2026) and the June 2026 site.
+# Fields: title, event, date (YYYY-MM-DD; use the 1st when the day is unknown), kind (optional: Poster, Seminar, ...),
+#         links (optional list of {label, url}), logo (path under /images/logos, shown at the right)
+- title: "Data Driven Methods for Measuring Galactic Dark Matter"
+  event: "Ph.D. thesis defense, Rutgers University"
+  logo: /images/logos/rutgers.png
+  date: 2026-05-21
+- title: "Efficient PINN Models of Cosmic Rays"
+  event: "Pheno 2026 Symposium, University of Pittsburgh"
+  logo: /images/logos/pitt.svg
+  date: 2026-05-11
+  links:
+    - { label: Abstract, url: "https://indico.global/event/16413/contributions/153841/" }
+    - { label: Slides, url: "https://indico.global/event/16413/contributions/153841/attachments/69756/135361/pheno_26_eputney_v1_1.pdf" }
+- title: "ClearPotential: Learning the Dust-Corrected Potential of the Milky Way Using Flows"
+  event: "NeurIPS 2025 Workshop on Machine Learning and the Physical Sciences"
+  logo: /images/logos/neurips.svg
+  kind: Poster
+  date: 2025-12-01
+  links:
+    - { label: Abstract, url: "https://inspirehep.net/literature/3089973" }
+    - { label: Letter, url: "https://ml4physicalsciences.github.io/2025/files/NeurIPS_ML4PS_2025_256.pdf" }
+    - { label: Poster, url: "https://neurips.cc/media/PosterPDFs/NeurIPS%202025/123092.png" }
+- title: "Gaia and Dark Matter"
+  event: "Cargèse Summer School, IESC"
+  logo: /images/logos/cnrs.svg
+  date: 2025-07-01
+  links:
+    - { label: Indico, url: "https://indico.desy.de/event/43837/contributions/163524/" }
+- title: "Model-free analyses of Gaia: mapping the local potential, dust, and dark matter"
+  event: "YITP Seminar, Stony Brook University"
+  logo: /images/logos/stonybrook.svg
+  date: 2025-04-03
+  links:
+    - { label: Abstract, url: "https://calendar.google.com/calendar/u/0/event?eid=N2R0bWU0bWUycXRkNGY0a2szZ2pzaDg5YXEgY2FsQG1heDIucGh5c2ljcy5zdW55c2IuZWR1" }
+- title: "Model-free analyses of Gaia: mapping the local potential, dust, and dark matter"
+  event: "Galaxy Hour, The Ohio State University"
+  logo: /images/logos/osu.svg
+  date: 2025-03-01
+  links:
+    - { label: Abstract, url: "https://astronomy.osu.edu/events/galaxy-hour-eric-putney" }
+- title: "Machine Learning and Galactic Dynamics"
+  event: "Graduate Seminar, University of Cincinnati"
+  logo: /images/logos/cincinnati.png
+  date: 2025-03-01
+- title: "Sweeping the Dust Away: An Unbiased Map of the Milky Way's Dark Matter and Gravitational Potential with Unsupervised Machine Learning"
+  event: "ML4Jets 2024, LPNHE Paris"
+  logo: /images/logos/lpnhe.png
+  date: 2024-11-01
+  links:
+    - { label: Abstract, url: "https://indico.cern.ch/event/1386125/contributions/6139683/" }
+    - { label: Slides, url: "https://indico.cern.ch/event/1386125/contributions/6139683/attachments/2961523/5208974/ML4Jets2024__Sweeping_the_Dust_Away__v1__Eric_Putney.pdf" }
+    - { label: Recording, url: "https://indico.cern.ch/event/1386125/contributions/6139683/attachments/2961523/5223920/ML4Jets_2024_Putney.mp4" }
+- title: "Sweeping the Dust Away: An unbiased map of the Milky Way's gravitational potential using unsupervised ML"
+  event: "DPF-PHENO 2024, University of Pittsburgh"
+  logo: /images/logos/pitt.svg
+  date: 2024-05-01
+  links:
+    - { label: Abstract, url: "https://indico.global/event/805/contributions/23676/" }
+    - { label: Slides, url: "https://indico.global/event/805/contributions/23676/attachments/11363/16830/Presentation%20Copy%20-%20Pheno%202024%20-%20Sweeping%20the%20Dust%20Away.pdf" }
+- title: "Mapping Dark Matter in the Milky Way using Normalizing Flows and Gaia DR3"
+  event: "ML4Jets 2023, DESY Hamburg"
+  logo: /images/logos/desy.png
+  date: 2023-11-01
+  links:
+    - { label: Abstract, url: "https://indico.cern.ch/event/1253794/contributions/5588628/" }
+    - { label: Slides, url: "https://indico.cern.ch/event/1253794/contributions/5588628/attachments/2746555/4779209/ML4Jets%202023%20-%20Flows%20for%20Gaia%20DR3%20-%20Presentation%20Copy.pdf" }
+- title: "Measuring Galactic dark matter through unsupervised machine learning"
+  event: "Phenomenology 2023 Symposium, University of Pittsburgh"
+  logo: /images/logos/pitt.svg
+  date: 2023-05-09
+  links:
+    - { label: Abstract, url: "https://indico.cern.ch/event/1218225/contributions/5384882/" }
+    - { label: Slides, url: "https://indico.cern.ch/event/1218225/contributions/5384882/attachments/2643367/4574890/Measuring%20Galactic%20Dark%20Matter%20through%20Unsupervised%20Machine%20Learning%20-%20Gaia%20DR3.pdf" }
+- title: "Measuring Galactic Dark Matter through Unsupervised Machine Learning"
+  event: "241st AAS Meeting, Seattle"
+  logo: /images/logos/aas.png
+  date: 2023-01-01
+  links:
+    - { label: Abstract, url: "https://submissions.mirasmart.com/AAS241/Itinerary/PresentationDetail.aspx?evdid=2525" }
+- title: "What Dark Matter Halos Tell Us About Dark Matter"
+  event: "Ph.D. candidacy exam, Rutgers University"
+  logo: /images/logos/rutgers.png
+  date: 2021-11-01
+  links:
+    - { label: Slides, url: "https://docs.google.com/presentation/d/1hIRnsO_SA0K5iA_SBDT4XSWl0EFH5x8gOfFhm2WLPRY/edit?usp=sharing" }
+- title: "Numerical Analysis of Collective Neutrino Oscillations in Dense Neutrino Media"
+  event: "Undergraduate honors thesis, University of New Mexico"
+  logo: /images/logos/unm.svg
+  date: 2020-04-01
+  links:
+    - { label: Slides, url: "https://docs.google.com/presentation/d/1ASJtMnLMl_vDvVYreC4gwaUiPOORhblyutP5QB5MJuQ/edit?usp=sharing" }
+    - { label: Thesis, url: "https://physics.unm.edu/undergraduate/thesis/2020_putney.pdf" }
+- title: "Laser Control for the Production of Excited Positronium in GBAR"
+  event: "CERN Summer Student Programme"
+  logo: /images/logos/cern.png
+  date: 2019-08-01
+  links:
+    - { label: Slides, url: "https://indico.cern.ch/event/824965/contributions/3450101/attachments/1893575/3123357/Laser_Control_for_the_Production_of_Excited_Positronium_in_GBAR_-_CERN_REU_Final_Talk_-_Draft_3.pdf" }
+- title: "Numerical Analysis of Collective Neutrino Oscillations in Core-Collapse Supernovae with Multidimensional Models"
+  event: "University of New Mexico Physics Day"
+  logo: /images/logos/unm.svg
+  date: 2019-04-01
+  links:
+    - { label: Slides, url: "https://docs.google.com/presentation/d/1ASJtMnLMl_vDvVYreC4gwaUiPOORhblyutP5QB5MJuQ/edit?usp=sharing" }
+- title: "Precision Measurement of the 6S → 7P₁/₂ Cesium Transition Radial Matrix Element via Simultaneous Absorption Spectroscopy"
+  event: "APS Four Corners 2018, University of Utah"
+  logo: /images/logos/aps.svg
+  date: 2018-10-01
+  links:
+    - { label: Abstract, url: "http://meetings.aps.org/Meeting/4CS18/Event/338507" }
+    - { label: Slides, url: "https://docs.google.com/presentation/d/1czJ4b71LwWKLmJ4kp8UobGaJ2dT0JGeJ4OHUD4gxwHc/edit?usp=sharing" }
+- title: "Analysis of Diffusion of a Rhodium Adatom on a Tungsten (111) Surface"
+  event: "APS Four Corners 2017, Colorado State University"
+  logo: /images/logos/aps.svg
+  kind: Poster
+  date: 2017-10-01
+  links:
+    - { label: Abstract, url: "http://meetings.aps.org/Meeting/4CF17/Event/311475" }
+    - { label: Poster, url: "https://docs.google.com/presentation/d/1sJDyw73beCHj6N3sXtj0bBZxNuse2EGa/edit?usp=sharing&ouid=114863095497799954143&rtpof=true&sd=true" }

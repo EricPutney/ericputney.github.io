@@ -1,0 +1,62 @@
+# Site settings (GitHub Pages builds this with Jekyll; no local tooling required)
+title: Eric Putney
+tagline: Postdoctoral Associate, New High Energy Theory Center, Rutgers University
+# DRAFT: meta description, rewritten per your note to mention cosmic rays and cosmological models.
+description: >-
+  Eric Putney is a postdoctoral associate at the New High Energy Theory Center (NHETC) at
+  Rutgers University. He uses machine learning to study dark matter through Gaia stellar
+  kinematics, cosmic rays, and cosmological models, and organizes with Rutgers AAUP-AFT.
+url: https://eputney.io
+baseurl: ""
+lang: en
+
+author:
+  name: Eric Putney
+  email: eputney@physics.rutgers.edu
+  job_title: Postdoctoral Associate
+  affiliation: New High Energy Theory Center, Rutgers University
+  orcid: 0000-0002-6775-5032
+  github: EricPutney
+  inspire: https://inspirehep.net/authors/2955113
+  ads: https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-6775-5032&sort=date+desc
+  # REVIEW: LinkedIn handle came from your INSPIRE profile. Delete this line to hide the icon.
+  linkedin: https://www.linkedin.com/in/eric-putney-07063b139
+  # Optional: add your Google Scholar profile URL to show a Scholar icon.
+  scholar: ""
+  cv: /attachments/cv_4.pdf
+
+# Research posts
+permalink: /writing/:year/:title/
+excerpt_separator: "<!--more-->"
+markdown: kramdown
+kramdown:
+  input: GFM
+  math_engine: mathjax
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+
+feed:
+  path: feed.xml
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      math: false
+
+exclude:
+  - .agents
+  - .claude
+  - skills-lock.json
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE.txt
+  - README.md
+  - COPY_REVIEW.md
+  - node_modules
+  - vendor

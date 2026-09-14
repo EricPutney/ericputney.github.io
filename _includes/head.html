@@ -1,0 +1,90 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{%- assign page_title = page.title | default: site.title -%}
+{%- if page.url == "/" -%}
+  {%- assign full_title = site.title | append: " | " | append: site.tagline -%}
+{%- else -%}
+  {%- assign full_title = page_title | append: " | " | append: site.title -%}
+{%- endif -%}
+{%- assign desc = page.description | default: page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 300 -%}
+{%- assign canonical = page.url | replace: "index.html", "" | absolute_url -%}
+{%- assign og_image = page.image | default: "/images/og-card.jpg" | absolute_url -%}
+<title>{{ full_title }}</title>
+<meta name="description" content="{{ desc | escape }}">
+<meta name="author" content="{{ site.author.name }}">
+<link rel="canonical" href="{{ canonical }}">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111113" media="(prefers-color-scheme: dark)">
+
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}profile{% endif %}">
+<meta property="og:title" content="{{ full_title }}">
+<meta property="og:description" content="{{ desc | escape }}">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:image" content="{{ og_image }}">
+<meta property="og:locale" content="en_US">
+{%- if page.layout == 'post' %}
+<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+<meta property="article:author" content="{{ site.author.name }}">
+{%- endif %}
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ full_title }}">
+<meta name="twitter:description" content="{{ desc | escape }}">
+<meta name="twitter:image" content="{{ og_image }}">
+
+<link rel="icon" href="{{ '/images/icon.ico' | relative_url }}" sizes="32x32">
+<link rel="apple-touch-icon" href="{{ '/images/apple-touch-icon.png' | relative_url }}">
+<link rel="alternate" type="application/rss+xml" title="{{ site.title }}: research posts" href="{{ '/feed.xml' | absolute_url }}">
+
+<link rel="preload" href="{{ '/assets/fonts/Geist-latin.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{ '/assets/css/fontawesome-all.min.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+{%- if page.math %}
+<script>window.MathJax = { tex: { displayMath: [["\\[", "\\]"], ["$$", "$$"]] } };</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+{%- endif %}
+
+{%- if page.url == "/" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "{{ site.url }}/#person",
+  "name": "{{ site.author.name }}",
+  "givenName": "Eric",
+  "familyName": "Putney",
+  "url": "{{ site.url }}/",
+  "image": "{{ '/images/avatar-480.jpg' | absolute_url }}",
+  "email": "mailto:{{ site.author.email }}",
+  "jobTitle": "{{ site.author.job_title }}",
+  "description": {{ site.description | strip_newlines | jsonify }},
+  "worksFor": {
+    "@type": "Organization",
+    "name": "New High Energy Theory Center, Rutgers University",
+    "url": "https://www.physics.rutgers.edu/het/"
+  },
+  "affiliation": [
+    { "@type": "Organization", "name": "Rutgers University", "url": "https://www.rutgers.edu/" },
+    { "@type": "Organization", "name": "Rutgers AAUP-AFT", "url": "https://rutgersaaup.org/" }
+  ],
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Rutgers University" },
+    { "@type": "CollegeOrUniversity", "name": "University of New Mexico" }
+  ],
+  "knowsAbout": ["dark matter", "galactic dynamics", "Gaia", "normalizing flows", "unsupervised machine learning", "astroparticle physics", "stellar kinematics"],
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "ORCID",
+    "value": "{{ site.author.orcid }}"
+  },
+  "sameAs": [
+    "https://orcid.org/{{ site.author.orcid }}",
+    "https://github.com/{{ site.author.github }}",
+    "{{ site.author.inspire }}"{% if site.author.linkedin and site.author.linkedin != "" %},
+    "{{ site.author.linkedin }}"{% endif %}{% if site.author.scholar and site.author.scholar != "" %},
+    "{{ site.author.scholar }}"{% endif %}
+  ]
+}
+</script>
+{%- endif %}

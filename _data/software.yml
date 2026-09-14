@@ -1,0 +1,22 @@
+# Public code. Blurbs are your own GitHub repo descriptions / README first lines, lightly trimmed (the "vibe-coded, YMMV" caveats dropped at your request).
+- name: beamer-editor
+  url: https://github.com/EricPutney/beamer-editor
+  blurb: "A graphical, PowerPoint-style editor for Beamer slide decks: renders the .tex to PDF, lets you draw and annotate on top of it, and round-trips the annotations back into the source as TikZ."
+- name: rutgersgotham
+  url: https://github.com/EricPutney/rutgersgotham
+  blurb: "A Beamer theme layered on beamertheme-gotham with the Rutgers red and charcoal palette, Inter, a banner title page, and a two-row footer with a section progress bar."
+- name: vscode-notebook-minimap
+  url: https://github.com/EricPutney/vscode-notebook-minimap
+  blurb: "A VS Code extension that adds a minimap for Jupyter notebooks, implementing the long-standing feature request microsoft/vscode#115266."
+- name: jupyter-kernel-manager
+  url: https://github.com/EricPutney/jupyter-kernel-manager
+  blurb: "A VS Code extension for viewing and managing kernels on local and remote Jupyter servers, mirroring what the Jupyter web UI offers."
+- name: stacker
+  url: https://github.com/EricPutney/stacker
+  blurb: "A VS Code extension for stacking, overlaying, and exporting multiple images, built for comparing plots and experiment outputs."
+- name: qmc-toolkit
+  url: https://github.com/EricPutney/qmc-toolkit
+  blurb: "Helpers for quasi-Monte Carlo sampling."
+- name: slurmsub
+  url: https://github.com/EricPutney/slurmsub
+  blurb: "Basic helper scripts for packing flexible arguments into Slurm jobs."

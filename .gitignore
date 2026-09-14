@@ -1,19 +1,12 @@
-# Cloned CV repo — tracked separately at github.com/EricPutney/Eric-Putney-CV
-Eric-Putney-CV/
-
-# Editor / IDE
-.idea
-.vscode
-
-# Shell / environment dotfiles
-.bash_profile
-.bashrc
-.profile
-.zprofile
-.zshrc
-.gitconfig
-
-# Tooling
-.mcp.json
-.ripgreprc
-.gitmodules
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+Gemfile.lock
+.claude/settings.local.json
+vendor/
+.bundle/
+COPY_REVIEW.md
+.claude/
+.agents/
+skills-lock.json

@@ -1,0 +1,41 @@
+<header class="sidebar" id="header">
+  <div class="sidebar__top">
+    <a class="sidebar__avatar" href="{{ '/' | relative_url }}" aria-label="Home">
+      <img src="{{ '/images/avatar-480.jpg' | relative_url }}" alt="Portrait of Eric Putney" width="96" height="96">
+    </a>
+    <div class="sidebar__identity">
+      <a class="sidebar__name" href="{{ '/' | relative_url }}">{{ site.author.name }}</a>
+      <p class="sidebar__role">{{ site.author.job_title }}<br>NHETC, Rutgers University</p>
+    </div>
+    <button class="sidebar__toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </button>
+  </div>
+
+  <nav class="sidebar__nav" id="nav" aria-label="Site">
+    <ul>
+      <li><a href="{{ '/#about' | relative_url }}" data-section="about">About</a></li>
+      <li><a href="{{ '/#research' | relative_url }}" data-section="research">Research</a></li>
+      {%- if site.posts.size > 0 %}
+      <li><a href="{{ '/#writing' | relative_url }}" data-section="writing">Writing</a></li>
+      {%- endif %}
+      <li><a href="{{ '/#organizing' | relative_url }}" data-section="organizing">Organizing</a></li>
+      <li><a href="{{ '/#timeline' | relative_url }}" data-section="timeline">Background</a></li>
+      <li><a href="{{ '/#software' | relative_url }}" data-section="software">Software</a></li>
+      <li><a href="{{ '/#skills' | relative_url }}" data-section="skills">Skills</a></li>
+    </ul>
+  </nav>
+
+  <ul class="sidebar__links" aria-label="Profiles">
+    <li><a href="mailto:{{ site.author.email }}" title="Email"><i class="fa fa-envelope" aria-hidden="true"></i><span class="visually-hidden">Email</span></a></li>
+    <li><a href="https://github.com/{{ site.author.github }}" title="GitHub" rel="me"><i class="fab fa-github" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a></li>
+    <li><a href="https://orcid.org/{{ site.author.orcid }}" title="ORCID"><i class="fab fa-orcid" aria-hidden="true"></i><span class="visually-hidden">ORCID</span></a></li>
+    <li><a href="{{ site.author.inspire }}" title="INSPIRE-HEP"><i class="fa fa-book-open" aria-hidden="true"></i><span class="visually-hidden">INSPIRE-HEP</span></a></li>
+    {%- if site.author.scholar and site.author.scholar != "" %}
+    <li><a href="{{ site.author.scholar }}" title="Google Scholar"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="visually-hidden">Google Scholar</span></a></li>
+    {%- endif %}
+    {%- if site.author.linkedin and site.author.linkedin != "" %}
+    <li><a href="{{ site.author.linkedin }}" title="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i><span class="visually-hidden">LinkedIn</span></a></li>
+    {%- endif %}
+  </ul>
+</header>

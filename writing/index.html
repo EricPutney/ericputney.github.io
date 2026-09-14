@@ -1,0 +1,23 @@
+---
+layout: default
+title: Writing
+description: Research posts by Eric Putney on dark matter, galactic dynamics, and machine learning.
+---
+<section class="section container">
+  <h1>Writing</h1>
+  {%- if site.posts.size > 0 %}
+  <ul class="posts">
+    {%- for post in site.posts %}
+    <li class="posts__item">
+      <time class="mono" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+      <div>
+        <a class="posts__title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        {%- if post.description %}<p class="posts__desc">{{ post.description }}</p>{% endif %}
+      </div>
+    </li>
+    {%- endfor %}
+  </ul>
+  {%- else %}
+  <p class="muted">No posts yet.</p>
+  {%- endif %}
+</section>

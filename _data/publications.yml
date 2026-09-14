@@ -1,0 +1,84 @@
+# One entry per paper, newest first. The homepage groups these by year.
+# Fields: title, authors (list, in paper order), year, venue (optional),
+#         arxiv (optional), doi (optional), url (optional, e.g. workshop PDF),
+#         summary (optional one-liner in your own words),
+#         figure (path under /images/papers, shown in a panel at the right), figure_alt (alt text).
+- title: "ClearPotential: Revealing Local Dark Matter in Three Dimensions"
+  authors: [Eric Putney, David Shih, Sung Hak Lim, Matthew R. Buckley]
+  year: 2025
+  arxiv: "2512.09989"
+  # Your summary from the June 2026 site.
+  summary: >-
+    Using our dust-correction technique from arXiv:2412.14236, ClearPotential upgrades the
+    measurement of the local potential in arXiv:2305.13358 to measure the unbiased
+    three-dimensional potential and mass density of the local Milky Way. This is a
+    first-of-its-kind 3D map of dark matter. We measure the local density of dark matter to be
+    about 1/3 of a proton per cubic centimeter (that's the amount of dark matter passing through
+    you right now!), place constraints on additional components of dark structure like a dark
+    disk, and try to constrain the global structure of the Milky Way's dark matter halo. With
+    Gaia DR4 we'll be able to expand this map across much more of our Galaxy.
+  figure: /images/papers/clearpotential-density-rz.webp
+  figure_alt: "Azimuthally averaged total mass density of the Milky Way in the R-z plane from ClearPotential"
+- title: "ClearPotential: Learning the Dust-Corrected Potential of the Milky Way Using Flows"
+  authors: [Eric Putney, David Shih, Matthew R. Buckley, Sung Hak Lim]
+  year: 2025
+  venue: "NeurIPS 2025 Workshop on Machine Learning and the Physical Sciences"
+  url: https://ml4physicalsciences.github.io/2025/files/NeurIPS_ML4PS_2025_256.pdf
+  figure: /images/papers/clearpotential-letter-potential.webp
+  figure_alt: "Contours of the learned Galactic potential in the midplane, compared to MilkyWayPotential2014"
+- title: "GalaxyScore: Estimating Local Dark Matter Density in Galaxies with Score Matching"
+  authors: [Sung Hak Lim, David Shih, Matthew R. Buckley, Eric Putney]
+  year: 2025
+  venue: "NeurIPS 2025 Workshop on Machine Learning and the Physical Sciences"
+  url: https://ml4physicalsciences.github.io/2025/files/NeurIPS_ML4PS_2025_258.pdf
+  figure: /images/papers/galaxyscore-density.webp
+  figure_alt: "GalaxyScore mass density versus radius on a simulated galaxy, with the true profile"
+- title: "Sweeping the Dust Away: Correcting the Phase Space Density of the Milky Way with Unsupervised Machine Learning"
+  authors: [Eric Putney, David Shih, Sung Hak Lim, Matthew R. Buckley]
+  year: 2024
+  arxiv: "2412.14236"
+  # Your summary from the June 2026 site.
+  summary: >-
+    Companion to ClearPotential. Optical surveys like Gaia are blocked by dust in the midplane of
+    the Milky Way, so dust extinction biases the measured phase space of nearby stars and gives
+    incorrect solutions to the Boltzmann equation. But the Boltzmann equation is just a continuity
+    equation for phase space: what if you float the missing fraction of stars as a learnable field
+    and find the solution that best obeys this equilibrium equation? Applied to Gaia DR3, we can
+    "sweep" the dust out of the way and estimate the unbiased phase space density and local
+    potential of the Milky Way.
+  figure: /images/papers/sweeping-dust-epsilon.webp
+  figure_alt: "Dust efficiency map in the Galactic midplane estimated from the Boltzmann equation"
+- title: "Mapping Dark Matter in the Milky Way using Normalizing Flows and Gaia DR3"
+  authors: [Sung Hak Lim, Eric Putney, Matthew R. Buckley, David Shih]
+  year: 2023
+  venue: "JCAP 01 (2025) 021"
+  arxiv: "2305.13358"
+  doi: 10.1088/1475-7516/2025/01/021
+  # Your original summary from the 2023 site, lightly trimmed.
+  summary: >-
+    We applied our normalizing-flow method to Gaia Data Release 3, the most complete
+    survey of stars in our galactic neighborhood, and measured a local dark matter
+    density of about 0.47 GeV/cm³, roughly half a proton of dark matter per cubic centimeter.
+  figure: /images/papers/mapping-dm-radial-profile.webp
+  figure_alt: "Dark matter density measured at twelve points versus Galactic radius, with a generalized NFW fit"
+- title: "Measuring Galactic Dark Matter through Unsupervised Machine Learning"
+  authors: [Matthew R. Buckley, Sung Hak Lim, Eric Putney, David Shih]
+  year: 2022
+  venue: "MNRAS 521 (2023) 5100"
+  arxiv: "2205.01129"
+  doi: 10.1093/mnras/stad843
+  # Your original summary from the 2023 site, lightly trimmed.
+  summary: >-
+    We show that normalizing flows can model the six-dimensional phase space of a
+    simulated Milky Way-like galaxy (h277) and accurately recover its acceleration
+    and mass density fields.
+  figure: /images/papers/measuring-dm-rho-z.webp
+  figure_alt: "Mass density recovered from normalizing flows along the vertical axis of the simulated galaxy h277, compared to the simulation truth"
+- title: "Measurement of the radial matrix elements for the 6s²S₁/₂ → 7p²P_J transitions in cesium"
+  authors: [Amy Damitz, George Toh, Eric Putney, Carol E. Tanner, D. S. Elliott]
+  year: 2019
+  venue: "Phys. Rev. A 99, 062510 (2019)"
+  arxiv: "1904.06362"
+  doi: 10.1103/PhysRevA.99.062510
+  figure: /images/papers/cesium-matrix-element.webp
+  figure_alt: "Experimental and theoretical values of the 6s to 7p3/2 matrix element in cesium"

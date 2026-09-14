@@ -1,388 +1,246 @@
-<!DOCTYPE HTML>
-<!--
-	Read Only by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
+---
+layout: default
+---
+{%- comment -%}
+  COPY REVIEW: paragraphs are marked KEPT (your words, from the June 2026 site or your CV),
+  EDITED (your words, trimmed or re-tensed), or DRAFT (mine). See COPY_REVIEW.md.
+{%- endcomment -%}
 
-<head>
-	<title>putney's page</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css"/>
-	<link rel="icon" type="image/x-icon" href="images/icon.ico">
-</head>
+<section id="about" class="section section--hero container">
+  <img class="hero__banner" src="{{ '/images/banner-1800.jpg' | relative_url }}"
+       srcset="{{ '/images/banner-900.jpg' | relative_url }} 900w, {{ '/images/banner-1800.jpg' | relative_url }} 1800w"
+       sizes="(min-width: 1024px) calc(100vw - 21rem), 100vw"
+       width="1800" height="393" alt="Photo strip: forests, a lake, campus buildings, and Eric waving from a stone wall" fetchpriority="high">
+  <h1 class="hero__title">Eric Putney</h1>
+  <!-- DRAFT: role line -->
+  <p class="hero__role">Postdoctoral Associate at the <a href="https://www.physics.rutgers.edu/het/">New High Energy Theory Center</a>, Rutgers University</p>
+  <!-- KEPT: your words, 2026-09-14 -->
+  <p class="hero__lede">I use machine learning to study astronomical and cosmological evidence for dark matter.</p>
+  <div class="hero__actions">
+    <a class="button button--primary" href="{{ site.author.cv | relative_url }}"><i class="fa fa-file-pdf" aria-hidden="true"></i> Download CV</a>
+    <a class="button" href="mailto:{{ site.author.email }}"><i class="fa fa-envelope" aria-hidden="true"></i> Email</a>
+  </div>
+  <div class="prose">
+    <!-- KEPT: June 2026 site. VERIFY: "recently defended" reads oddly once you are listed as a postdoc above. -->
+    <p>I grew up in Vancouver, WA, across the river from Portland. In 2016 I moved to Albuquerque, NM to get my bachelor's in physics at UNM, and graduated in 2020. I recently defended my Ph.D. thesis at Rutgers University, in New Brunswick, NJ, on building ML models for measuring dark matter in our galaxy.</p>
+    <!-- KEPT: June 2026 site -->
+    <p>Generally speaking, I am interested in any and all probes of dark matter physics. I mainly focus on astronomical and cosmological probes, where there is tons of open data and analyses to be done.</p>
+    <!-- KEPT: June 2026 site -->
+    <p>In my free time I listen to music, work on my home lab, and play video games. Every day I try to make my life a little more sustainable and independent from large corporate services. It's a long and often non-linear process, but it makes me feel good.</p>
+  </div>
+</section>
 
-<body class="is-preload">
+<section id="research" class="section container container--wide">
+  <h2>Research</h2>
+  <div class="prose prose--narrow">
+    <!-- KEPT: June 2026 site -->
+    <p>Much of my work on dark matter has focused on its signatures in the Milky Way. Dark matter halos formed in the early universe pulled in visible matter to make stars, galaxies, and everything else. Today our Milky Way sits inside a dark matter halo, giving us an incredible laboratory to study it. We do this in two ways.</p>
+    <!-- KEPT: June 2026 site -->
+    <p><em>Direct detection</em>: look for scattering of dark matter particles off of visible matter. This depends on how much dark matter you expect there to be in a room at any given time. I measured this local density first in <a href="https://arxiv.org/abs/2305.13358">2023</a>, using a relatively crude solution to the six-dimensional Boltzmann equation, and again in <a href="https://arxiv.org/abs/2512.09989">2025</a>, where we correct for dust and provide a 3D map of the local potential.</p>
+    <!-- KEPT: June 2026 site -->
+    <p><em>Indirect detection</em>: look for dark matter turning into some kind of visible Standard Model messenger, which could be light, cosmic rays, or neutrinos. I am interested in the Galactic Center GeV Excess, a long-documented excess of gamma rays from the center of the Milky Way that might be produced by dark matter annihilation.</p>
+    <h3>Now</h3>
+    <!-- EDITED: your words from 2026-09-14, lightly edited for flow at your request -->
+    <p>Broadly speaking, I study dark matter in the galaxy and in the evolution of the universe. Right now I am working on physics-inspired neural network models of cosmic ray transport in the Milky Way, aimed at better γ-ray background modeling for the Galactic Center GeV excess, with Yujin Park, David Shih, and Matthew Buckley at Rutgers and Tracy Slatyer and Christopher Chen at MIT.</p>
+    <p>I am also working on an interesting form of interacting, viscous dark radiation that arises in a "dark QCD" model of cosmology and could help resolve the Hubble tension, with Nico Fernandez and Matt Buckley.</p>
+    <p>Finally, I have a long-standing interest in galactic dynamics and Gaia, most recently through ClearPotential, which models the three-dimensional distribution of dark matter around the Sun. We are looking forward to Gaia DR4 and are excited to extend this analysis toward the Galactic Center.</p>
+  </div>
 
-	<!-- Header -->
-	<section id="header">
-		<header>
-			<span class="image avatar"><img src="images/avatar.jpg" alt /></span>
-			<h1 id="logo"><a href="#">eric putney</a></h1>
-			<p>Hello, welcome to my page, why don't you take a seat? Get comfortable, relax, take a second if you need
-				to.</p>
-		</header>
-		<nav id="nav">
-			<ul>
-				<li><a href="#about" class="active">about me</a></li>
-				<li><a href="#research" class="active">research</a></li>
-				<li><a href="#skills">skills and interests</a></li>
-				<li><a href="#timeline">life snapshots</a></li>
-				<!-- <li><a href="#four">Contact</a></li> -->
-			</ul>
-		</nav>
-		<footer>
-			<ul class="icons">
-				<li><a href="https://mastodon.social/@eputney" target="_blank" class="icon brands fa-mastodon"><span
-							class="label">mastodon.social</span></a></li>
-				<li><a href="https://github.com/EricPutney" target="_blank" class="icon brands fa-github"><span
-							class="label">Github</span></a></li>
-				<li><a href="mailto: eputney@physics.rutgers.edu" target="_blank" class="icon solid fa-envelope"><span
-							class="label">Email</span></a></li>
-			</ul>
-		</footer>
-	</section>
+  <h3 class="subhead">Publications</h3>
+  {%- assign pubs = site.data.publications -%}
+  {%- assign years = pubs | map: "year" | uniq -%}
+  <div class="pubs">
+    {%- for y in years %}
+    {%- assign group = pubs | where: "year", y %}
+    <div class="pubs__year">
+      <div class="pubs__label"><span class="mono">{{ y }}</span></div>
+      <ol class="pubs__list">
+        {%- for pub in group %}
+        <li class="pub{% if pub.figure %} pub--with-figure{% endif %}">
+          {%- assign link = pub.url -%}
+          {%- if pub.arxiv %}{% assign link = "https://arxiv.org/abs/" | append: pub.arxiv %}{% endif -%}
+          {%- if pub.doi %}{% assign link = "https://doi.org/" | append: pub.doi %}{% endif -%}
+          <h4 class="pub__title">{% if link %}<a href="{{ link }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}</h4>
+          <p class="pub__authors">
+            {%- for a in pub.authors -%}
+              {%- if a == site.author.name %}<strong>{{ a }}</strong>{% else %}{{ a }}{% endif %}{% unless forloop.last %}, {% endunless %}
+            {%- endfor -%}
+          </p>
+          {%- if pub.venue %}<p class="pub__venue">{{ pub.venue }}</p>{% endif %}
+          {%- if pub.summary %}<p class="pub__summary">{{ pub.summary }}</p>{% endif %}
+          <p class="pub__links">
+            {%- if pub.arxiv %}<a class="chip" href="https://arxiv.org/abs/{{ pub.arxiv }}">arXiv:{{ pub.arxiv }}</a>{% endif %}
+            {%- if pub.doi %}<a class="chip" href="https://doi.org/{{ pub.doi }}">DOI</a>{% endif %}
+            {%- if pub.url %}<a class="chip" href="{{ pub.url }}">PDF</a>{% endif %}
+          </p>
+          {%- if pub.figure %}
+          <a class="pub__figure" href="{{ link | default: pub.figure | relative_url }}" aria-label="Key figure from {{ pub.title | escape }}">
+            <img src="{{ pub.figure | relative_url }}" alt="{{ pub.figure_alt | default: '' | escape }}" loading="lazy">
+          </a>
+          {%- endif %}
+        </li>
+        {%- endfor %}
+      </ol>
+    </div>
+    {%- endfor %}
+  </div>
+  <p class="pubs__more">Full record on <a href="{{ site.author.inspire }}">INSPIRE-HEP</a>, <a href="https://orcid.org/{{ site.author.orcid }}">ORCID</a>, and <a href="{{ site.author.ads }}">NASA ADS</a>.</p>
 
-	<!-- Wrapper -->
-	<div id="wrapper">
+  {%- if site.data.talks.size > 0 %}
+  <h3 class="subhead">Talks</h3>
+  <ul class="talks">
+    {%- for talk in site.data.talks %}
+    <li class="talk">
+      <span class="mono talk__date">{{ talk.date | date: "%b %Y" }}</span>
+      <div class="talk__body">
+        <p class="talk__title">{{ talk.title }}</p>
+        <p class="talk__meta">{% if talk.kind %}{{ talk.kind }}, {% endif %}{{ talk.event }}
+          {%- if talk.links %} <span class="talk__links">{% for l in talk.links %}<a href="{{ l.url }}">{{ l.label }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</span>{% endif %}</p>
+      </div>
+      {%- if talk.logo %}<span class="talk__logo"><img src="{{ talk.logo | relative_url }}" alt="" loading="lazy"></span>{% endif %}
+    </li>
+    {%- endfor %}
+  </ul>
+  {%- endif %}
+</section>
 
-		<!-- Main -->
-		<div id="main">
+{%- if site.posts.size > 0 %}
+<section id="writing" class="section container">
+  <h2>Writing</h2>
+  <ul class="posts">
+    {%- for post in site.posts limit: 5 %}
+    <li class="posts__item">
+      <time class="mono" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+      <div>
+        <a class="posts__title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        {%- if post.description %}<p class="posts__desc">{{ post.description }}</p>{% endif %}
+      </div>
+    </li>
+    {%- endfor %}
+  </ul>
+  {%- if site.posts.size > 5 %}<p><a href="{{ '/writing/' | relative_url }}">All posts</a></p>{% endif %}
+</section>
+{%- endif %}
 
-			<!-- One -->
-			<section id="about">
-				<div class="image main" data-position="center">
-					<img src="images/banner.jpg" alt />
-				</div>
-				<div class="container">
-					<header class="major">
-						<h2>eric putney</h2>
-					</header>
-						<h3>about me</h3>
-						<p> I grew up in Vancouver WA, across the river from Portland. In 2016, I moved to Albuquerque NM
-							to get my bachelors in Physics at UNM, and graduated in 2020. I recently defended my PhD thesis at Rutgers University,
-							in New Brunswick NJ, on building ML models for measuring dark matter in our galaxy.
-							<br><br>
-							Generally speaking, I am interested in any and all probes of dark matter physics. We know dark
-							matter exists, but I want to know what it is! I mainly focus on astronomical and cosmological
-							probes of dark matter physics, where there is tons of open data and analyses to be done.
-							<br><br>
-							In my free time I listen to music, work on my home lab, and play video games! Every day, I try
-							to make my life a little bit more sustainable and independent from large corporate services. It's
-							a long and often non-linear process, but it makes me feel good.
-							<br><br>
-							You can reach me at eputney@physics.rutgers.edu, and can find my CV
-							<a href="attachments/cv_4.pdf" target="_blank"> here:</a>
-						</p>
-				</div>
-			</section>
+<section id="organizing" class="section container container--wide">
+  <h2>Organizing</h2>
+  <div class="split">
+    <div>
+      <div class="prose">
+        <!-- EDITED: June 2026 site, last sentence moved to past tense per your answer -->
+        <p>I am a proud member and organizer for the <a href="https://rutgersaaup.org">Rutgers AAUP-AFT</a>. I served as a picket captain for our Spring 2023 strike, where we fought back against Rutgers central administration and withheld our labor to negotiate a fair contract. I then served as the union representative for the Department of Physics and Astronomy, organizing toward our 2026 contract negotiations.</p>
+      </div>
+      <!-- KEPT: roles and dates from your CV (June 2026); the two "present" roles closed at 2026 per your answer -->
+      <dl class="cv__list cv__list--tight">
+        <div><dt><span class="mono">Dec 2022 to 2026</span></dt><dd><strong>Department Representative</strong>, Physics and Astronomy, Rutgers AAUP-AFT</dd></div>
+        <div><dt><span class="mono">Sep 2024 to 2026</span></dt><dd><strong>Graduate Steering Committee and Executive Council</strong>, Rutgers AAUP-AFT</dd></div>
+        <div><dt><span class="mono">Jan 2024 to Dec 2025</span></dt><dd><strong>Fellows Organizing Committee Chair</strong>, Rutgers AAUP-AFT</dd></div>
+        <div><dt><span class="mono">Jan to Jun 2025</span></dt><dd><strong>Short-term staff organizer</strong>, Clinically Focused University Practitioners campaign</dd></div>
+        <div><dt><span class="mono">Sep 2023 to Jun 2024</span></dt><dd><strong>President</strong>, Physics and Astronomy Graduate Student Organization</dd></div>
+        <div><dt><span class="mono">Jan to Jun 2025</span></dt><dd><strong>Treasurer</strong>, Rutgers Graduate Student Association</dd></div>
+      </dl>
+    </div>
+    <figure class="split__figure">
+      <img src="{{ '/images/aaup.png' | relative_url }}" width="357" height="314" alt="Rutgers AAUP-AFT logo: a raised fist holding a red pencil" loading="lazy">
+    </figure>
+  </div>
+</section>
 
-			<section id="research">
-				<div class="container">
-					<h3>research</h3>
-					<p>Much of my work on dark matter has focused on its signatures in the Milky Way. Dark matter halos formed
-						in the early universe pulled in visible matter to make stars, galaxies, etc. Today, our Milky Way Galaxy
-						sits inside a dark matter halo, giving us an incredibly laboratory to study it! We do this in two ways:
-						<br><br>
-						*Direct* detection: Look for scattering of dark matter particles off of visible matter. This depends on how
-						much dark matter you expect there to be in a room at any given time. I measured this local density a few times,
-						first in <a href="https://arxiv.org/abs/2305.13358">2023</a> using a relatively crude solution to the six-dimensional
-						Boltzmann equation, and again in <a href="https://arxiv.org/abs/2512.09989">2025</a>, where we correct for
-						dust and provide a 3D map of the local potential.
-						<br><br>
-						*Indirect* detection: Looking for dark matter turning into some kind of visible "Standard Model" messenger,
-						this could be light, cosmic rays, or neutrinos. I am interested in studying the Galactic Center GeV Excess,
-						a long documented excess of gamma rays being emitted from the center of the Milky Way that might be produced
-						by dark matter annihilation!
-					</p>
+<section id="timeline" class="section container container--wide">
+  <h2>Background</h2>
+  <div class="cv">
+    <div class="cv__col">
+      <h3 class="subhead">Positions</h3>
+      <dl class="cv__list">
+        <div><dt><span class="mono">Sep 2026 to present</span></dt><dd><strong>Postdoctoral Associate</strong>, New High Energy Theory Center, Rutgers University</dd></div>
+        <!-- KEPT: from appointment letters and CV -->
+        <div><dt><span class="mono">2020 to 2026</span></dt><dd><strong>Graduate Worker</strong>, Department of Physics and Astronomy, Rutgers University. Teaching assistant 2021 to 2025; graduate assistant at NHETC, 2025.</dd></div>
+        <div><dt><span class="mono">Summer 2019</span></dt><dd><strong>Summer Student</strong>, CERN, with the <a href="http://gbar.web.cern.ch">GBAR</a> antimatter collaboration</dd></div>
+        <div><dt><span class="mono">Summer 2018</span></dt><dd><strong>REU Student</strong>, Purdue University, <a href="https://engineering.purdue.edu/ElliottLab">Elliott Lab</a></dd></div>
+      </dl>
+    </div>
+    <div class="cv__col">
+      <h3 class="subhead">Education</h3>
+      <dl class="cv__list">
+        <!-- KEPT: thesis title page and CV -->
+        <div><dt><span class="mono">2026</span></dt><dd><strong>Ph.D., Physics</strong>, Rutgers University, defended May 2026. Thesis: <em>Data Driven Methods for Measuring Galactic Dark Matter</em>. Adviser: <a href="http://www.physicsmatt.com">Matthew Buckley</a>.</dd></div>
+        <div><dt><span class="mono">2020</span></dt><dd><strong>B.S., Physics</strong>, <em>summa cum laude</em>, University of New Mexico. Honors thesis on collective neutrino oscillations in supernovae with Huaiyu Duan.</dd></div>
+      </dl>
+      <h3 class="subhead">Awards</h3>
+      <!-- KEPT: CV -->
+      <dl class="cv__list">
+        <div><dt><span class="mono">2021</span></dt><dd>Rutgers Academic Fellowship</dd></div>
+        <div><dt><span class="mono">2020</span></dt><dd>Eion Gray Scholarship; UNM Feynman Award</dd></div>
+        <div><dt><span class="mono">2019</span></dt><dd>Goldwater Scholar; Rayburn Outstanding Student in Laboratory Physics and Astronomy</dd></div>
+      </dl>
+    </div>
+  </div>
 
-					<h4><a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-6775-5032&sort=date+desc">
-							papers: (click for all NASA/ADS listings)</a></h4>
-					<p>
-					<ol>
-						<!-- ClearPotential -->
-						<li> May 2023 <a href="https://arxiv.org/abs/2512.09989">"ClearPotential"</a>
-							<ul>
-								<li>
-									Authors: Eric Putney, David Shih, Sung Hak Lim, Matthew R. Buckley
-								</li>
-								<li>
-									Links: <a href="https://arxiv.org/abs/2512.09989">arXiv:2512.09989</a>
-								</li>
-								<li>
-									Summary: Using our powerful dust-correction technique developed in <a href="https://arxiv.org/abs/2412.14236">arXiv:2412.14236</a>,
-									ClearPotential upgrades the measurement of the local potential done in <a href="https://arxiv.org/abs/2305.13358">arXiv:2305.13358</a>
-									to measure the unbiased three-dimension potential and mass density of the local Milky Way.
-									This is a first-of-its-kind 3D map of dark matter, which is a powerful tool! We measure the local
-									density of dark matter to be about 1/3 a proton/cubic centimeter (that's the amount of dark matter
-									passing through you right now!), and are able to place constraints on additional components of dark structure
-									like a dark disk. We try to constrain the global structure of the Milky Way's dark matter halo, and find some
-									interesting results. Let's look out for Gaia DR4, with new data we'll be able to expand this map across
-									much more of our Galaxy!
-								</li>
-							</ul>
-						</li>
-						<!-- Sweeping the Dust Away -->
-						<li> December 2024 <a href="https://arxiv.org/abs/2412.14236">"Sweeping the Dust Away"</a>
-							<ul>
-								<li>
-									Authors: Eric Putney, David Shih, Sung Hak Lim, Matthew R. Buckley
-								</li>
-								<li>
-									Links: <a href="https://arxiv.org/abs/2412.14236">arXiv:2412.14236</a>
-								</li>
-								<li>
-									Summary: Companion to ClearPotential! Optical surveys like Gaia are blocked by dust in the midplane
-									of the Milky Way. When we measure the phase space of nearby stars, dust extinction *biases* this
-									measurement and gives us incorrect solutions to the Boltzmann equation. However, the Boltzmann equation
-									is just a continuity equation for phase space... What if you floated this missing fraction of stars
-									as a learnable field, and find the solution that best obeys this equilibrium equation? Applying this to
-									Gaia DR3, we are able to "Sweep" the dust out of the way and estimate the unbiased phase space density
-									and local potential of the Milky Way.
-								</li>
-							</ul>
-						</li>
-						<!-- Lim 2023 -->
-						<li> May 2023 <a href="https://arxiv.org/abs/2305.13358">"Mapping Dark Matter in the Milky Way using
-								Normalizing Flows and Gaia DR3"</a>
-							<ul>
-								<li>
-									Authors: Sung Hak Lim, Eric Putney, Matthew R. Buckley, David Shih
-								</li>
-								<li>
-									Links: <a href="https://arxiv.org/abs/2305.13358">arXiv:2305.13358</a>
-								</li>
-								<li>
-									Summary: We applied the methods developed in <a href="https://arxiv.org/abs/2205.01129">arXiv:2205.01129</a> to <a href="https://www.cosmos.esa.int/web/gaia/dr3">Gaia Data Release 3 (DR3)</a>, the most complete survey of stars in our galactic neighborhood. We measured a local dark matter density of about .47 GeV/cc, or about half of a proton of dark matter per cubic centimeter!
-								</li>
-							</ul>
-						</li>
-						<!-- Buckley 2022 -->
-						<li> May 2022 <a href="https://arxiv.org/abs/2205.01129">"Measuring Galactic Dark Matter through
-								Unsupervised Machine Learning"</a>
-							<ul>
-								<li>
-									Authors: Matthew R. Buckley, Sung Hak Lim, Eric Putney, David Shih
-								</li>
-								<li>
-									Links: <a href="https://academic.oup.com/mnras/article/521/4/5100/7084999">MNRAS</a>, <a href="https://arxiv.org/abs/2205.01129">arXiv:2205.01129</a>
-								</li>
-								<li>
-									Summary: In this paper, we demonstrate that normalizing flows are capable of modeling the
-									complex 6-dimensional phase space of a simulated Milky Way-like galaxy (<a href="https://nbody.shop/data.html">h277</a>). We also show that our normalizing flow model is capable of accurately recovering the galactic acceleration and mass density field.
-								</li>
-							</ul>
-						</li>
+  <h3 class="subhead">Snapshots</h3>
+  <ul class="gallery">
+    <li class="gallery__item gallery__item--wide">
+      <img src="{{ '/images/gso-720.jpg' | relative_url }}" width="720" height="542" alt="Graduate students at a department barbecue in a park" loading="lazy">
+      <!-- EDITED: trimmed from your GSO snapshot -->
+      <p>Graduate Student Organization barbecue, 2023. As GSO President I organized the SSPAR student seminars, barbecues, and any other events that served our graduate student community.</p>
+    </li>
+    <li class="gallery__item">
+      <img class="is-top" src="{{ '/images/nu7-720.jpg' | relative_url }}" width="720" height="882" alt="NU-7, a pistachio-green BB-8 style robot" loading="lazy">
+      <!-- EDITED: trimmed from your 3D printing snapshot -->
+      <p>NU-7, a BB-8 style astromech I designed from scratch and 3D printed on an Ender 3 near the end of lockdown. His name is NU-7, or "nut", given the pistachio green.</p>
+    </li>
+    <li class="gallery__item">
+      <img src="{{ '/images/cern-720.jpg' | relative_url }}" width="720" height="540" alt="Eric at CERN" loading="lazy">
+      <!-- EDITED: trimmed from your CERN snapshot -->
+      <p>CERN, 2019. With <a href="http://gbar.web.cern.ch">GBAR</a>, I wrote a PyVISA wrapper for a Quantel CFR400 pulsed Nd:YAG laser and instrumentation for related systems.</p>
+    </li>
+    <li class="gallery__item">
+      <img src="{{ '/images/unm_goldwater_2019-720.jpg' | relative_url }}" width="720" height="379" alt="Eric receiving the 2019 Goldwater Scholarship at UNM" loading="lazy">
+      <!-- EDITED: trimmed from your Goldwater snapshot -->
+      <p>Goldwater Scholar, 2019. Credit to Kiyoko Simmons at the UNM Honors College for helping me get the application together.</p>
+    </li>
+    <li class="gallery__item">
+      <img src="{{ '/images/purdue-720.jpg' | relative_url }}" width="720" height="540" alt="Optics bench at Purdue" loading="lazy">
+      <!-- EDITED: trimmed from your Purdue snapshot -->
+      <p>Purdue REU, 2018. A precision measurement of a 6s to 7p transition matrix element in cesium with Daniel Elliott, Amy Damitz, and George Toh.</p>
+    </li>
+    <li class="gallery__item">
+      <img src="{{ '/images/sps-720.jpg' | relative_url }}" width="720" height="478" alt="Society of Physics Students members at UNM" loading="lazy">
+      <!-- EDITED: trimmed from your SPS snapshot -->
+      <p>Society of Physics Students, UNM. I helped fund conference travel, connected students with research, and made <a href="{{ '/attachments/shirt_2019_2020_ultra_high_res-01.png' | relative_url }}">a great T-shirt</a> with my partner.</p>
+    </li>
+    <li class="gallery__item gallery__item--wide">
+      <img src="{{ '/images/unm-720.jpg' | relative_url }}" width="720" height="405" alt="Groundbreaking ceremony for the UNM Physics and Astronomy building" loading="lazy">
+      <!-- EDITED: trimmed from your UNM snapshot -->
+      <p>University of New Mexico, 2016 to 2020. I even got a <a href="http://news.unm.edu/news/pais-construction-officially-begins-with-groundbreaking">photo-op</a> at the groundbreaking for the new PAÍS building. I grew closely attached to New Mexico during my time here.</p>
+    </li>
+  </ul>
+</section>
 
-					</ol>
-				</p>
-				<h4>talks:</h4>
-				<p>
-					<ol>
-						<li>
-							"Data Driven Methods for Measuring Galactic Dark Matter" Thesis Defense, Rutgers University, May 2026
-						</li>
-						<li>
-							"Efficient PINN Models of Cosmic Rays" Pheno 2026 Symposium, University of Pittsburgh, May 2026
-							(<a href="https://indico.global/event/16413/contributions/153841/">abstract</a>, <a href="https://indico.global/event/16413/contributions/153841/attachments/69756/135361/pheno_26_eputney_v1_1.pdf">slides</a>)
-						</li>
-						<li>
-							"ClearPotential: Learning the Dust-Corrected Potential of the Milky Way Using Flows" Poster, NeurIPS ML4PS 2025, December 2025
-							(<a href="https://inspirehep.net/literature/3089973">abstract</a>, <a href="https://ml4physicalsciences.github.io/2025/files/NeurIPS_ML4PS_2025_256.pdf">letter</a>, <a href="https://neurips.cc/media/PosterPDFs/NeurIPS%202025/123092.png">poster</a>)
-						</li>
-						<li>
-							"Gaia and Dark Matter" Cargese Summer School, IESC, July 2025
-							(<a href="https://indico.desy.de/event/43837/contributions/163524/">indico</a>)
-						</li>
-						<li>
-							"Model-free analyses of Gaia: mapping the local potential, dust, and dark matter" YITP Seminar, Stony Brook University, April 2025
-							(<a href="https://calendar.google.com/calendar/u/0/event?eid=N2R0bWU0bWUycXRkNGY0a2szZ2pzaDg5YXEgY2FsQG1heDIucGh5c2ljcy5zdW55c2IuZWR1">abstract</a>)
-						</li>
-						<li>
-							"Model-free analyses of Gaia: mapping the local potential, dust, and dark matter" Galaxy Hour, The Ohio State University, March 2025
-							(<a href="https://astronomy.osu.edu/events/galaxy-hour-eric-putney">abstract</a>)
-						</li>
-						<li>
-							"Machine Learning and Galactic Dynamics" Graduate Seminar, University of Cincinnati, March 2025
-						</li>
-						<li>
-							"Sweeping the Dust Away: An Unbiased Map of the Milky Way's Dark Matter and Gravitational Potential with Unsupervised Machine Learning" ML4Jets 2024, November 2024
-							(<a href="https://indico.cern.ch/event/1386125/contributions/6139683/">abstract</a>, <a href="https://indico.cern.ch/event/1386125/contributions/6139683/attachments/2961523/5208974/ML4Jets2024__Sweeping_the_Dust_Away__v1__Eric_Putney.pdf">slides</a>, <a href="https://indico.cern.ch/event/1386125/contributions/6139683/attachments/2961523/5223920/ML4Jets_2024_Putney.mp4">recording</a>)
-						</li>
-						<li>
-							"Sweeping the Dust Away: An unbiased map of the Milky Way's gravitational potential using unsupervised ML" DPF-PHENO 2024, University of Pittsburgh, May 2024
-							(<a href="https://indico.global/event/805/contributions/23676/">abstract</a>, <a href="https://indico.global/event/805/contributions/23676/attachments/11363/16830/Presentation%20Copy%20-%20Pheno%202024%20-%20Sweeping%20the%20Dust%20Away.pdf">slides</a>)
-						</li>
-						<li>
-							"Mapping Dark Matter in the Milky Way using Normalizing Flows and Gaia DR3" ML4Jets 2023, DESY, November 2023
-							(<a href="https://indico.cern.ch/event/1253794/contributions/5588628/">abstract</a>, <a href="https://indico.cern.ch/event/1253794/contributions/5588628/attachments/2746555/4779209/ML4Jets%202023%20-%20Flows%20for%20Gaia%20DR3%20-%20Presentation%20Copy.pdf">slides</a>)
-						</li>
-						<li>
-							"Measuring Galactic dark matter through unsupervised machine learning" Phenomenology 2023 Symposium, University of Pittsburgh, May 2023
-							(<a href="https://indico.cern.ch/event/1218225/contributions/5384882/">abstract</a>, <a href="https://indico.cern.ch/event/1218225/contributions/5384882/attachments/2643367/4574890/Measuring%20Galactic%20Dark%20Matter%20through%20Unsupervised%20Machine%20Learning%20-%20Gaia%20DR3.pdf">slides</a>)
-						</li>
-						<li>
-							"Measuring Galactic Dark Matter through Unsupervised Machine Learning" 241st AAS Meeting, Seattle WA, January 2023
-							(<a href="https://submissions.mirasmart.com/AAS241/Itinerary/PresentationDetail.aspx?evdid=2525">abstract</a>)
-						</li>
-						<li>
-							"What Dark Matter Halos Tell Us About Dark Matter" PhD Candidacy Exam, Rutgers University, November 2021
-							(<a href="https://docs.google.com/presentation/d/1hIRnsO_SA0K5iA_SBDT4XSWl0EFH5x8gOfFhm2WLPRY/edit?usp=sharing">slides</a>)
-						</li>
-						<li>
-							"Numerical Analysis of Collective Neutrino Oscillations in Dense Neutrino Media" Undergraduate Honors Thesis, University of New Mexico, April 2020
-							(<a href="https://docs.google.com/presentation/d/1ASJtMnLMl_vDvVYreC4gwaUiPOORhblyutP5QB5MJuQ/edit?usp=sharing">slides</a>, <a href="https://docs.google.com/presentation/d/1wdTRY_g22zeUvdElEYY-H9RCqCjt-0SJ/edit?usp=sharing&ouid=114863095497799954143&rtpof=true&sd=true">poster</a>)
-						</li>
-						<li>
-							"Laser Control for the Production of Excited Positronium in GBAR" CERN Summer School, August 2019
-							(<a href="https://indico.cern.ch/event/824965/contributions/3450101/attachments/1893575/3123357/Laser_Control_for_the_Production_of_Excited_Positronium_in_GBAR_-_CERN_REU_Final_Talk_-_Draft_3.pdf">slides</a>)
-						</li>
-						<li>
-							"Numerical Analysis of Collective Neutrino Oscillations in Core-Collapse Supernovae with Multidimensional Models" University of New Mexico Physics Day, April 2019
-							(<a href="https://docs.google.com/presentation/d/1ASJtMnLMl_vDvVYreC4gwaUiPOORhblyutP5QB5MJuQ/edit?usp=sharing">slides</a>)
-						</li>
-						<li>
-							"Precision Measurement of the 6S &rarr; 7P<sub>1/2</sub> Cesium Transition Radial Matrix Element via Simultaneous Absorption Spectroscopy" 2018 APS Four Corners, University of Utah, October 2018
-							(<a href="http://meetings.aps.org/Meeting/4CS18/Event/338507">abstract</a>, <a href="https://docs.google.com/presentation/d/1czJ4b71LwWKLmJ4kp8UobGaJ2dT0JGeJ4OHUD4gxwHc/edit?usp=sharing">slides</a>)
-						</li>
-						<li>
-							"Analysis of Diffusion of a Rhodium Adatom on a Tungsten (111) Surface" 2017 APS Four Corners, Colorado State University, October 2017
-							(<a href="http://meetings.aps.org/Meeting/4CF17/Event/311475">abstract</a>, <a href="https://docs.google.com/presentation/d/1sJDyw73beCHj6N3sXtj0bBZxNuse2EGa/edit?usp=sharing&ouid=114863095497799954143&rtpof=true&sd=true">poster</a>)
-						</li>
-					</ol>
-				</p>
-				
+{%- if site.data.software.size > 0 %}
+<section id="software" class="section container container--wide">
+  <h2>Software</h2>
+  <!-- KEPT: blurbs are your GitHub descriptions and README first lines. See _data/software.yml. -->
+  <ul class="software">
+    {%- for sw in site.data.software %}
+    <li class="software__item">
+      <a class="software__name" href="{{ sw.url }}"><i class="fab fa-github" aria-hidden="true"></i> {{ sw.name }}</a>
+      <p>{{ sw.blurb }}</p>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+{%- endif %}
 
-				</div>
-			</section>
-
-			<div id="papers" class="container">
-			</div>
-
-			<!-- Two -->
-			<section id="skills">
-				<div class="container">
-					<h3>domain knowledge and interests</h3>
-					<ul class="feature-icons">
-						<li class="icon solid fa-robot">Machine learning using pytorch</li>
-						<li class="icon brands fa-python">Python data analysis tools: pandas, matplotlib, scipy</li>
-						<!-- <li class="icon solid fa-book-skull"></li> -->
-						<!-- <li class="icon brands fa-linux"></li> -->
-						<li class="icon solid fa-screwdriver-wrench">Open source software and hardware projects</li>
-						<li class="icon solid fa-coffee">I like to make nice coffee!</li>
-						<li class="icon solid fa-dice-d20">Tabletop games (d&d, cyberpunk)</li>
-					</ul>
-				</div>
-			</section>
-
-			<!-- Three -->
-			<section id="timeline">
-				<div class="container">
-					<h3>life snapshots</h3>
-					<p>A timeline of where I've been and what I do</p>
-					<div class="features">
-						<article>
-							<a class="image"><img src="images/gso.jpg" alt /></a>
-							<div class="inner">
-								<h4>Rutgers Physics and Astronomy Graduate Student Organization</h4>
-								<p>
-									I became Co-President in Fall 2023, and will serve until May 2024. I organize Student Seminars in Physics and Astronomy at Rutgers (SSPAR) seminars, barbeques, and any other events that serve our graduate student community.
-								</p>
-							</div>
-						</article>
-						<article>
-							<a class="image"><img src="images/nu7.jpg" alt /></a>
-							<div class="inner">
-								<h4>3D Printing and Robotics</h4>
-								<p>I'm interested in how things are made. How much time and how many resources does it take to design and make a thing? I bought an ender 3 v2 3d printer near the end of lockdown so I could do something besides homework and research, and I've been working on a few different projects since then. On the left I've pictured one of the few projects I've actually finished: a BB-8 styled astromech that I designed completely from scratch. His name is NU-7 (or nut, given the pistachio green color).</p>
-							</div>
-						</article>
-						<article>
-							<a class="image"><img src="images/aaup.png" alt /></a>
-							<div class="inner">
-								<h4>Department Rep. for the AAUP-AFT</h4>
-								<p>I am a proud member and organizer for the <a href="https://rutgersaaup.org">Rutgers AAUP-AFT</a>. I served as a picket captain for our Spring 2023 strike, where we fought back against Rutgers central administration and withheld our labor to negotiate a fair contract. I now serve as a union representative for the department of Physics and Astronomy to continue to organize for our upcoming 2026 contract negotiations.</p>
-							</div>
-						</article>
-						<article>
-							<a class="image"><img src="images/rutgers.jpg" alt /></a>
-							<div class="inner">
-								<h4>2020-Present: Graduate Worker at Rutgers University</h4>
-								<p>I joined the Rutgers Physics & Astronomy department in 2020, and finished my Ph.D. qualifier
-									exams in Fall 2021. I teach introductory and higher level undergraduate physics courses, and am working with Dr. <a href="http://www.physicsmatt.com">Matthew Buckley</a> to further our understanding of dark matter.</p>
-							</div>
-						</article>
-						<article>
-							<a class="image"><img src="images/cern.jpg" alt /></a>
-							<div class="inner">
-								<h4>2019 CERN Summer Student</h4>
-								<p>I worked with <a href="https://twitter.com/_Ystenn_">Dr. Pauline Comini</a> from the <a href="http://gbar.web.cern.ch">GBAR</a> collaboration to study antimatter in gravitational fields. I developed a PyVISA wrapper for interfacing with a Quantel CFR400 pulsed Nd:YAG laser, and instrumentation for related systems.</p>
-							</div>
-						</article>
-						<article>
-							<a class="image"><img src="images/unm_goldwater_2019.jpg" alt /></a>
-							<div class="inner">
-								<h4>2019 Goldwater Scholar</h4>
-								<p>Credit to Kiyoko Simmons from the UNM Honors College for helping me get this application together. I was <em>not</em> the most qualified applicant for something like this (few people usually are) but being awarded this honor was a massive boon to my confidence as a researcher.</p>
-							</div>
-						</article>
-						<article>
-							<a class="image"><img src="images/purdue.jpg" alt /></a>
-							<div class="inner">
-								<h4>2018 Purdue REU</h4>
-								<p>I spent the summer of 2018 in West Lafayette, Indiana working with <a href="https://engineering.purdue.edu/ElliottLab">Dr. Daniel Elliott</a>, Amy Damitz, and George Toh on a precision measurement of one of the 6s &rarr; 7p transition matrix elements for cesium.</p>
-							</div>
-						</article>
-						<article id="sps">
-							<!--<a href="#" class="image"><img src="images/sps.jpg" alt="" /></a>-->
-							<a class="image"><img src="images/sps.jpg" alt /></a>
-							<div class="inner">
-								<h4>Society of Physics Students</h4>
-								<p>While I served in SPS leadership roles, I helped secure funding to
-									get students to
-									conferences, connected students with research opportunities, and
-									made
-									<a href="attachments/shirt_2019_2020_ultra_high_res-01.png" target="_blank">a great
-										T-shirt</a> with my partner. I also started the discord server, freeing us from GroupMe forever.
-								</p>
-							</div>
-						</article>
-						<article>
-							<a class="image"><img src="images/unm.jpg" alt /></a>
-							<div class="inner">
-								<h4>2016-2020: B.S. Physics from the University of New Mexico</h4>
-								<p>I was an <a href="#sps">active member</a> of the P&A department community. I was involved in numerous undergraduate research projects, held multiple leadership roles in our SPS chapter, and I even got a <a href="http://news.unm.edu/news/pais-construction-officially-begins-with-groundbreaking">photo-op</a> at the ground-breaking ceremony for our new PA&IacuteS facilty. I grew closely attached to New Mexico during my time here &#128151.</p>
-							</div>
-						</article>
-					</div>
-				</div>
-			</section>
-
-		</div>
-
-		<!-- Footer -->
-		<section id="footer">
-			<div class="container">
-				<ul class="copyright">
-					<li>&copy; Eric Putney. All rights reserved.</li>
-					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-				</ul>
-			</div>
-		</section>
-
-	</div>
-
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
-
-</body>
-
-</html>
+<section id="skills" class="section container container--wide">
+  <h2>Skills and interests</h2>
+  <!-- EDITED: your June 2026 list plus the research tooling from your papers. VERIFY. -->
+  <ul class="skills">
+    <li><i class="fa fa-robot" aria-hidden="true"></i><span><strong>Machine learning</strong> with PyTorch: normalizing flows, physics-informed neural networks, score matching</span></li>
+    <li><i class="fab fa-python" aria-hidden="true"></i><span><strong>Python data analysis</strong>: pandas, matplotlib, SciPy, NumPy</span></li>
+    <li><i class="fa fa-satellite" aria-hidden="true"></i><span><strong>Astronomical data</strong>: Gaia DR3 and large stellar kinematic catalogs</span></li>
+    <li><i class="fa fa-server" aria-hidden="true"></i><span><strong>HPC</strong>: Slurm clusters, multi-GPU training, CLASS and MontePython/Cobaya cosmology pipelines</span></li>
+    <li><i class="fa fa-screwdriver" aria-hidden="true"></i><span><strong>Open source software and hardware</strong>, 3D printing, home lab</span></li>
+    <li><i class="fa fa-coffee" aria-hidden="true"></i><span>I like to make nice coffee!</span></li>
+    <li><i class="fa fa-dice-d20" aria-hidden="true"></i><span>Tabletop games (D&amp;D, Cyberpunk) and video games</span></li>
+  </ul>
+</section>
