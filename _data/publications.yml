@@ -3,6 +3,19 @@
 #         arxiv (optional), doi (optional), url (optional, e.g. workshop PDF),
 #         summary (optional one-liner in your own words),
 #         figure (path under /images/papers, shown in a panel at the right), figure_alt (alt text).
+- title: "Dark Radiation Sticks Together: Dark QCD and the Hubble Tension"
+  authors: [Matthew R. Buckley, Nicolas Fernandez, Eric Putney]
+  year: 2026
+  arxiv: "2609.16120"
+  # DRAFT summary (written by Claude from the abstract, 2026-09-28). Rewrite in your own words before publishing.
+  summary: >-
+    We introduce a dark-sector version of QCD in which light dark quarks confine at the MeV scale
+    into dark pions, turning free-streaming dark radiation into a viscous fluid. Fit to Planck, ACT,
+    BBN, DESI DR2, Pantheon+, and SH0ES, the model raises the inferred Hubble constant to about
+    71.6 km/s/Mpc and reduces the residual Hubble tension to about 3 sigma, while the heavy dark
+    matter in the same sector stays within existing self-interaction bounds.
+  figure: /images/papers/dark-qcd-h0-profile.webp
+  figure_alt: "Likelihood profile over H0 for LCDM and the dark QCD model, with and without SH0ES, showing dark QCD reaching the SH0ES band at lower cost"
 - title: "ClearPotential: Revealing Local Dark Matter in Three Dimensions"
   authors: [Eric Putney, David Shih, Sung Hak Lim, Matthew R. Buckley]
   year: 2025
