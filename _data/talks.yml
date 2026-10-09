@@ -1,6 +1,13 @@
 # One entry per talk, newest first. Source: your CV (June 2026) and the June 2026 site.
 # Fields: title, event, date (YYYY-MM-DD; use the 1st when the day is unknown), kind (optional: Poster, Seminar, ...),
 #         links (optional list of {label, url}), logo (path under /images/logos, shown at the right)
+- title: "Probing Dark Matter in the Milky Way with Physics-Informed Neural Networks"
+  event: "Particle Seminar, Lawrence Berkeley National Laboratory"
+  logo: /images/logos/lbnl.svg
+  date: 2026-10-07
+  links:
+    - { label: Abstract, url: "https://www-theory.lbl.gov/?event=particle-seminar-eric-putney-rutgers-title-modeling-the-diffuse-gamma-ray-sky-with-physics-informed-neural-networks" }
+    - { label: Slides, url: "/attachments/putney_lbnl_seminar_2026-10-07.pdf" }
 - title: "Efficient PINN Models of Cosmic Rays"
   event: "2nd UNDARK Workshop, Instituto de Astrofísica de Canarias"
   logo: /images/logos/undark.png
