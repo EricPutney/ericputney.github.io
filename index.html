@@ -97,7 +97,7 @@ layout: default
         <p class="talk__meta">{% if talk.kind %}{{ talk.kind }}, {% endif %}{{ talk.event }}
           {%- if talk.links %} <span class="talk__links">{% for l in talk.links %}<a href="{{ l.url }}">{{ l.label }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</span>{% endif %}</p>
       </div>
-      {%- if talk.logo %}<span class="talk__logo"><img src="{{ talk.logo | relative_url }}" alt="" loading="lazy"></span>{% endif %}
+      {%- if talk.logo %}<span class="talk__logo{% if talk.logo_bg == 'dark' %} talk__logo--dark{% endif %}"><img src="{{ talk.logo | relative_url }}" alt="" loading="lazy"></span>{% endif %}
     </li>
     {%- endfor %}
   </ul>
