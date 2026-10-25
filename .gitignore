@@ -10,3 +10,6 @@ COPY_REVIEW.md
 .claude/
 .agents/
 skills-lock.json
+
+# Cloned CV repo, tracked separately at github.com/EricPutney/Eric-Putney-CV
+Eric-Putney-CV/

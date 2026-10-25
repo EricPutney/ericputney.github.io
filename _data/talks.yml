@@ -1,6 +1,12 @@
 # One entry per talk, newest first. Source: your CV (June 2026) and the June 2026 site.
 # Fields: title, event, date (YYYY-MM-DD; use the 1st when the day is unknown), kind (optional: Poster, Seminar, ...),
 #         links (optional list of {label, url}), logo (path under /images/logos, shown at the right)
+- title: "Physics-Informed Neural Networks for Galactic Dark Matter"
+  event: "Astronomy Seminar, Westlake University"
+  logo: /images/logos/westlake_astro.png
+  date: 2026-10-12
+  links:
+    - { label: "Slides (中文)", url: "/attachments/putney_westlake_seminar_2026-10-12_zh.pdf" }
 - title: "Probing Dark Matter in the Milky Way with Physics-Informed Neural Networks"
   event: "Particle Seminar, Lawrence Berkeley National Laboratory"
   logo: /images/logos/lbnl.svg
