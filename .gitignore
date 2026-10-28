@@ -13,3 +13,16 @@ skills-lock.json
 
 # Cloned CV repo, tracked separately at github.com/EricPutney/Eric-Putney-CV
 Eric-Putney-CV/
+
+# Local shell and editor config that lives in this folder; never part of the site
+.bash_profile
+.bashrc
+.profile
+.zprofile
+.zshrc
+.gitconfig
+.gitmodules
+.ripgreprc
+.mcp.json
+.idea
+.vscode
