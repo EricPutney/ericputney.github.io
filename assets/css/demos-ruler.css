@@ -1,0 +1,16 @@
+/* Fig. 4: the stage is taller than the shared 2:1 so the number line's labels sit on separate rows (others' measurements above
+   the axis, the paper's results below). The number line and its labels need a fixed height (about 215 px); the picture above
+   them grows with the figure's width. Where container units exist the height is exactly that; the aspect ratios are the
+   fallback for older browsers. Loaded after demos.css. */
+#demo-ruler .demo__stage--ruler { aspect-ratio: 1.7 / 1; }
+@media (max-width: 760px) { #demo-ruler .demo__stage--ruler { aspect-ratio: 1.25 / 1; } }
+@media (max-width: 519px) { #demo-ruler .demo__stage--ruler { aspect-ratio: 1 / 1.25; } }
+@supports (width: 1cqw) {
+  #demo-ruler { container-type: inline-size; }
+  #demo-ruler .demo__stage--ruler { aspect-ratio: auto; height: calc(214px + 34cqw); }
+}
+@media (max-width: 519px) { @supports (width: 1cqw) { #demo-ruler .demo__stage--ruler { height: calc(214px + 62cqw); } } }
+
+#demo-ruler .button.is-on { background: var(--accent-soft); border-color: var(--accent-soft); color: var(--accent); }
+#demo-ruler figcaption .mono { text-wrap: balance; }   /* the fine print never leaves an orphan line */
+#demo-ruler [data-ctl="more"] { margin-left: auto; }   /* stays at the right when the buttons wrap onto a second row */

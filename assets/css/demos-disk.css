@@ -1,0 +1,50 @@
+/* Fig. 1 (#demo-disk), final adjustment round: the plain-words gloss under the slider, the soft "try me next" ring (slider, Kick, Skip ahead,
+   real stars), the selected look of "Gaia's 0.32", readouts that keep their room so nothing jumps, and a readable fine print. */
+
+/* the slider: label | track | number, with the everyday size of the number underneath; on a phone the track gets the full width */
+#demo-disk .demo__range { display: grid; grid-template-columns: auto minmax(6rem, 1fr) auto; align-items: center; gap: 0.2rem 0.6rem; flex: 1 1 18rem; max-width: 30rem; }
+#demo-disk .demo__range > span:first-child { grid-column: 1; grid-row: 1; white-space: nowrap; }
+#demo-disk .demo__range input[type="range"] { grid-column: 2; grid-row: 1; min-width: 0; width: 100%; border-radius: 999px; }
+#demo-disk .demo__range output { grid-column: 3; grid-row: 1; min-width: 12ch; text-align: right; }
+#demo-disk .demo__gloss { grid-column: 1 / -1; grid-row: 2; font-size: 0.8rem; line-height: 1.3; color: var(--text-2); text-align: right; }
+@media (max-width: 519px) {
+  #demo-disk .demo__range { grid-template-columns: 1fr auto; flex-basis: 100%; max-width: none; row-gap: 0.35rem; }
+  #demo-disk .demo__range > span:first-child { grid-column: 1; grid-row: 1; }
+  #demo-disk .demo__range output { grid-column: 2; grid-row: 1; min-width: 0; }
+  #demo-disk .demo__range input[type="range"] { grid-column: 1 / 3; grid-row: 2; }
+  #demo-disk .demo__gloss { grid-column: 1 / 3; grid-row: 3; text-align: left; }
+}
+
+/* second row: the right panel's switch and Skip ahead (it keeps its room while hidden, so nothing jumps) */
+#demo-disk .demo__lead { color: var(--text-2); }
+@media (max-width: 599px) { #demo-disk .demo__lead { display: none; } }
+#demo-disk .is-away { visibility: hidden; }
+#demo-disk .demo__controls--reads { min-height: 2.4rem; }
+@media (max-width: 519px) {   /* the switch and Skip ahead share one line on a phone */
+  #demo-disk .demo__controls--reads { column-gap: 0.5rem; }
+  #demo-disk .demo__controls--reads .seg { width: auto; flex: 1 1 auto; min-width: 0; }
+  #demo-disk .demo__controls--reads .seg button { white-space: nowrap; font-size: 0.75rem; padding-inline: 0.35rem; }
+  #demo-disk .demo__controls--reads .button { flex: 0 0 auto; padding-inline: 0.5rem; font-size: 0.8rem; }
+}
+@media (max-width: 379px) { #demo-disk .demo__controls--reads .button.is-away { display: none; } }   /* too narrow for both on one line: it then takes a line only when it is needed */
+#demo-disk .demo__sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* "Gaia's 0.32" looks selected (not greyed out) while the slider sits at Gaia's value */
+#demo-disk .button.is-on { background: var(--accent-soft); border-color: var(--accent-soft); color: var(--accent); }
+
+/* the one control worth touching next wears a soft ring that pings three times, then stays; corners follow the control */
+#demo-disk .is-cue { --ring: color-mix(in srgb, var(--accent) 45%, transparent); box-shadow: 0 0 0 2px var(--ring); }
+#demo-disk .button.is-cue { border-color: var(--accent); color: var(--accent); }
+#demo-disk .seg.is-cue { border-color: var(--accent); }
+#demo-disk .seg.is-cue button[aria-checked="false"] { color: var(--accent); }
+#demo-disk input[type="range"].is-cue { border-radius: 999px; }
+@media (prefers-reduced-motion: no-preference) {
+  #demo-disk .is-cue.is-ping { animation: demo-disk-ping 1.5s ease-out 3; }
+}
+@keyframes demo-disk-ping {
+  0% { box-shadow: 0 0 0 2px var(--ring), 0 0 0 2px var(--ring); }
+  100% { box-shadow: 0 0 0 2px var(--ring), 0 0 0 11px transparent; }
+}
+
+/* fine print: legible, and never one word on a line of its own */
+#demo-disk figcaption .mono { color: var(--text-2); text-wrap: pretty; }

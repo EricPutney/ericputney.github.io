@@ -1,0 +1,12 @@
+# Interactive figures (prototype, all copy DRAFT). Each key names an include in _includes/demos/<key>.html,
+# used by /demos/ (the gallery) and by the homepage publication list (a paper's `demos:` list).
+# id: the figure's element id; card: its chip label under a paper; js / css: the figure's own files in assets/.
+disk:           { id: demo-disk,           card: "Weighing the disk",              js: demos-disk.js,           css: demos-disk.css }
+dust:           { id: demo-dust,           card: "Sweeping the dust away",         js: demos-dust.js,           css: demos-dust.css }
+pions:          { id: demo-pions,          card: "Dark radiation sticks together", js: demos-pions.js,          css: demos-pions.css }
+ruler:          { id: demo-ruler,          card: "The ruler on the sky",           js: demos-ruler.js,          css: demos-ruler.css }
+profile:        { id: demo-profile,        card: "Walk the H₀ profile",            js: demos-profile.js,        css: demos-profile.css }
+orbit:          { id: demo-orbit,          card: "Flick a star",                   js: demos-orbit.js,          css: demos-orbit.css }
+clearpotential: { id: demo-clearpotential, card: "How the method works",           js: demos-clearpotential.js, css: demos-clearpotential.css }
+potential3d:    { id: demo-potential3d,    card: "The potential in 3D",            js: demos-potential3d.js,    css: demos-potential3d.css }
+darkqcd:        { id: demo-darkqcd,        card: "Cooling the dark sector",        js: demos-darkqcd.js,        css: demos-darkqcd.css }

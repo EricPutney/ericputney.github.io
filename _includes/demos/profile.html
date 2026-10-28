@@ -1,0 +1,37 @@
+{%- comment -%}Interactive figure "profile": shared by demos.html and the homepage publication list (include with n="…" to number it). All copy is DRAFT.{%- endcomment -%}
+<figure class="demo" id="demo-profile" data-src="{{ '/assets/data/dqcd_h0_profiles.json' | relative_url }}">
+    <div class="demo__head">{% if include.n %}<span class="mono">Fig. {{ include.n }}</span>{% endif %}<h3>Walk the Hubble-constant profile</h3></div>
+    <div class="pf-key">
+      <p class="pf-lead" data-out="lead">Penalty for adding SH<span class="pf-0">0</span>ES</p>
+      <p class="pf-items">
+        <span class="pf-item"><svg class="pf-sw" viewBox="0 0 30 10" aria-hidden="true"><line x1="1" y1="5" x2="29" y2="5" stroke-dasharray="6 4"/></svg><span class="pf-name">ΛCDM, the standard model</span><output class="pf-num" data-out="lcdm">…</output></span>
+        <span class="pf-item pf-item--dqcd"><svg class="pf-sw" viewBox="0 0 30 10" aria-hidden="true"><line x1="1" y1="5" x2="29" y2="5"/></svg><span class="pf-name">dark QCD, the paper’s model</span><output class="pf-num" data-out="dqcd">…</output></span>
+      </p>
+    </div>
+    <div class="demo__stage demo__stage--profile pf-stage">
+      <canvas aria-label="Penalty in sigma for the standard model and for dark QCD at each value of the Hubble constant, with the Planck and SH0ES measurements as bands and a red line you drag to read both penalties"></canvas>
+    </div>
+    <div class="demo__controls">
+      <label class="demo__range"><span>H<sub>0</sub>, km/s/Mpc</span><input type="range" min="66" max="74.5" step="0.1" value="71.7" data-ctl="h0"><output class="mono" data-out="h0">71.7</output></label>
+      <button type="button" class="switch" role="switch" aria-checked="true" data-ctl="shoes"><span class="sw"></span><span>with SH<span class="pf-0">0</span>ES</span></button>
+      <button type="button" class="button button--small" data-ctl="more" aria-expanded="false">Details</button>
+    </div>
+    <div class="demo__controls demo__adv pf-data">
+      <span class="pf-dlabel">Data used</span>
+      <div class="seg" role="radiogroup" aria-label="Data used">
+        <button type="button" role="radio" aria-checked="true" data-combo="0">CMB + DESI + SN</button>
+        <button type="button" role="radio" aria-checked="false" data-combo="1">+ BBN</button>
+        <button type="button" role="radio" aria-checked="false" data-combo="2">+ ACT + BBN</button>
+      </div>
+      <p class="pf-dgloss" data-out="gloss">the oldest light in the universe (CMB), a map of galaxies (DESI) and supernovae (SN)</p>
+      <p class="pf-dgloss pf-thick"><svg class="pf-sw" viewBox="0 0 30 10" aria-hidden="true"><line x1="3" y1="5" x2="27" y2="5"/></svg><span>thick stroke on a curve: that model’s likely H<sub>0</sub> range (68%)</span></p>
+    </div>
+    <div class="demo__adv pf-panel">
+      <div class="pf-phead"><span>What dark QCD changes to reach this H<sub>0</sub></span><select class="demo__select" data-ctl="rows" aria-label="Parameter rows"><option value="key">key parameters</option><option value="all">all parameters</option></select></div>
+      <div class="demo__stage pf-pstage"><canvas aria-label="Where each dark QCD setting must sit to reach the chosen Hubble constant, against its best fit"></canvas></div>
+    </div>
+    {% comment %}DRAFT caption{% endcomment %}
+    <figcaption>To match SH<span class="pf-0">0</span>ES, dark QCD pays about half the standard model’s penalty. Each curve, a profile, is the lowest penalty a model reaches at each H<sub>0</sub>. Drag the red line.
+      <span class="mono">Curves: the paper’s PROSPECT fits; bands: Planck 2018, SH0ES 2022; σ = √Δχ².</span></figcaption>
+    <p class="demo__note"></p>
+  </figure>

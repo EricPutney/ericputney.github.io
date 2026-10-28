@@ -1,0 +1,28 @@
+/* Fig. 6 (flick a star): its own stage shape and a few touches. Link after demos.css. */
+
+/* The stage is a little taller than wide: a header band (about 60 px) above the square map holds the scale, the inset and its note,
+   so nothing is printed over the map. demos-orbit.js reads the band as (stage height - stage width), with a floor of 54 px. */
+.demo--orbit .demo__stage--orbit { aspect-ratio: 1 / 1.11; max-width: 34rem; }
+@media (max-width: 519px) { .demo--orbit .demo__stage--orbit { aspect-ratio: 1 / 1.17; } }
+
+/* touch: the first tap arms the map, and the whole stage says so */
+.demo--orbit .demo__stage.is-armed { outline: 2px solid var(--accent); outline-offset: -2px; }
+
+/* the clock reads "not yet" until a flick, then "65 million years": hold its width so the next readout never shifts */
+.demo--orbit .demo__read--time output { min-width: 15ch; }
+
+/* after the first flick, the Galactic frame button pulses three times (the best moment of the figure) */
+.demo--orbit .seg button.is-nudge { animation: ep-orbit-nudge 1.5s ease-in-out 3; }
+@keyframes ep-orbit-nudge { 0%, 100% { box-shadow: inset 0 0 0 0 transparent; } 50% { box-shadow: inset 0 0 0 2px var(--accent); } }
+@media (prefers-reduced-motion: reduce) { .demo--orbit .seg button.is-nudge { animation: none; box-shadow: inset 0 0 0 2px var(--accent); } }
+
+/* the key to the inset, shown with Details */
+.demo--orbit .demo__key { margin: 0.6rem 0 0; font-size: 0.85rem; line-height: 1.5; color: var(--text-2); max-width: 65ch; }
+
+/* phones: the switch, Details and Clear share one row (they wrap on the narrowest screens) */
+@media (max-width: 519px) {
+  .demo--orbit .demo__controls:not(.demo__controls--reads) { gap: 0.6rem 0.4rem; }
+  .demo--orbit .demo__controls > .seg { flex: 1 1 auto; width: auto; }
+  .demo--orbit .demo__controls > .seg button { padding: 0.5rem 0.3rem; }
+  .demo--orbit .demo__controls .button--small { flex: 0 0 auto; padding: 0.5rem 0.45rem; font-size: 0.8rem; }
+}

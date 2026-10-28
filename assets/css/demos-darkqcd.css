@@ -1,0 +1,27 @@
+/* Fig. "Cooling the dark sector" (#demo-darkqcd, assets/js/demos-darkqcd.js). Load after demos.css. */
+
+/* stage: 2:1 beside each other; on phones the box sits on top of the panel, which grows when Details opens */
+#demo-darkqcd .demo__stage { aspect-ratio: 2 / 1; }
+#demo-darkqcd .demo__stage canvas { touch-action: pan-y; }   /* vertical swipes scroll the page; sideways drags on the curve set the temperature */
+
+/* sliders: fixed label and readout columns, so the tracks line up and never change length while you drag */
+#demo-darkqcd .dq-range {
+  display: grid; grid-template-columns: 8.6rem minmax(0, 1fr) 5.75rem; grid-template-areas: "lab trk out" ". scl .";
+  column-gap: 0.7rem; row-gap: 0.15rem; align-items: center; flex: 0 1 35rem; max-width: 35rem;
+}
+#demo-darkqcd .dq-range > span:first-child { grid-area: lab; white-space: normal; line-height: 1.25; }
+#demo-darkqcd .dq-range input[type="range"] { grid-area: trk; width: 100%; min-width: 0; }
+#demo-darkqcd .dq-range output { grid-area: out; min-width: 0; text-align: right; font-variant-numeric: tabular-nums; }
+#demo-darkqcd .dq-scale { grid-area: scl; display: flex; justify-content: space-between; gap: 0.5rem; font-size: 0.78rem; line-height: 1.2; color: var(--text-2); white-space: nowrap; }
+#demo-darkqcd .dq-adv { margin-top: 0.7rem; }
+@media (min-width: 520px) { #demo-darkqcd .demo__controls > .button--small { margin-top: -1.1rem; } }   /* level the buttons with the slider track, not with its scale line */
+
+/* the BBN readout: one plain sentence in body type */
+#demo-darkqcd .dq-bbn { margin: 0.7rem 0 0; max-width: 65ch; font-size: 0.95rem; line-height: 1.5; color: var(--text); min-height: 1.5em; }
+
+@media (max-width: 519px) {
+  #demo-darkqcd .demo__stage { aspect-ratio: 1 / 1.56; }
+  #demo-darkqcd.demo--more .demo__stage { aspect-ratio: 1 / 2.04; }
+  #demo-darkqcd .dq-range { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "lab out" "trk trk" "scl scl"; row-gap: 0.3rem; flex-basis: 100%; max-width: none; }
+  #demo-darkqcd .dq-bbn { min-height: 4.5em; }
+}

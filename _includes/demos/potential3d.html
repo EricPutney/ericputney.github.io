@@ -1,0 +1,28 @@
+{%- comment -%}Interactive figure "potential3d": shared by demos.html and the homepage publication list (include with n="…" to number it). All copy is DRAFT.{%- endcomment -%}
+<figure class="demo demo--narrow" id="demo-potential3d" data-src="{{ '/assets/data/clearpotential_phi_grid.json' | relative_url }}" data-src-mesh="{{ '/assets/data/clearpotential_phi_shells.json' | relative_url }}">
+    <div class="demo__head">{% if include.n %}<span class="mono">Fig. {{ include.n }}</span>{% endif %}<h3>The local potential in 3D</h3></div>
+    {% comment %}DRAFT hook and definition{% endcomment %}
+    <p class="demo__headline">Potential is the depth of gravity’s well. Its shape shows where the Galaxy’s mass, dark matter included, sits.</p>
+    <div class="demo__stage demo__stage--square demo__stage--turn">
+      <canvas aria-label="A 3D map of how deep gravity’s well is within 12,000 light-years of the Sun, drawn as nested layers of equal depth: cut open, or sliced flat"></canvas>
+    </div>
+    <div class="demo__controls">
+      <label class="demo__range"><span data-slider-name>Depth</span><input type="range" min="0" max="1000" step="1" value="588" data-ctl="level"><output class="mono" data-out="level">−1.57 × 10⁵ (km/s)²</output></label>
+      <div class="seg" role="radiogroup" aria-label="View" data-group="view"><button type="button" role="radio" aria-checked="true" data-view="orbit">Layers</button><button type="button" role="radio" aria-checked="false" data-view="slice">Slice</button></div>
+      <button type="button" class="switch" role="switch" aria-checked="true" data-ctl="cut"><span class="sw"></span>Cut open</button>
+      <div class="seg" role="radiogroup" aria-label="Slice direction" data-group="plane" hidden><button type="button" role="radio" aria-checked="false" data-plane="xy">Top</button><button type="button" role="radio" aria-checked="true" data-plane="xz">Side</button><button type="button" role="radio" aria-checked="false" data-plane="yz">End</button></div>
+      <span class="demo__spacer"></span>
+      <button type="button" class="button button--small" data-ctl="more" aria-expanded="false">Details</button>
+    </div>
+    <div class="demo__controls demo__adv" data-details>
+      <div class="seg" role="radiogroup" aria-label="Look of the layer" data-group="style"><button type="button" role="radio" aria-checked="true" data-style="shells">Solid</button><button type="button" role="radio" aria-checked="false" data-style="glow">Glow</button></div>
+      <div class="seg" role="radiogroup" aria-label="Colours" data-group="cmap"><button type="button" role="radio" aria-checked="true" data-cmap="viridis">Purple-yellow</button><button type="button" role="radio" aria-checked="false" data-cmap="slate">Grey-blue</button></div>
+      {% comment %}DRAFT unit gloss{% endcomment %}
+      <p class="p3d-unitnote">Depth is in (km/s)², a speed squared: a star that falls 10,000 deeper, from rest, reaches about 140 km/s.</p>
+    </div>
+    <div class="demo__controls demo__controls--reads"><span class="demo__read"><output class="mono" data-out="num"></output><span class="p3d-unit" data-out="unit" title="A speed squared: a star that falls 10,000 deeper, from rest, reaches about 140 km/s."></span><span data-out="rel">at the Sun’s own depth</span></span></div>
+    {% comment %}DRAFT caption (29 w; the slice variant 23 w){% endcomment %}
+    <figcaption><span data-cap="orbit">Layers of equal depth around the Sun: deeper toward the Galaxy’s centre, stretched along the disk. Grey lines show them cut open. Slide to pick one; drag to turn.</span><span data-cap="slice" data-touch="A flat slice through the same layers, coloured by depth. Slide to move it; tap the map to read the depth there." hidden>A flat slice through the same layers, coloured by depth. Slide to move it; point at the map to read the depth there.</span>
+      <span class="mono">From Gaia space telescope stars (ClearPotential); mean of 100 networks; 390 light-year grid.</span></figcaption>
+    <p class="demo__note"></p>
+  </figure>

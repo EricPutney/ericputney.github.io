@@ -1,0 +1,13 @@
+/* Fig. 3: two stages. The boxes come first with the controls right under them, then the two charts. */
+.demo__stage--pions { aspect-ratio: 2 / 1; }
+.demo__stage--pions canvas { cursor: pointer; }   /* a click or tap on the boxes squeezes them */
+.demo__stage--pions-charts { height: 13.25rem; margin-top: 0.85rem; }   /* a fixed height: aspect-ratio with a min-height would widen the stage on tablets */
+#demo-pions .demo__range { max-width: 36rem; }
+#demo-pions .demo__range--fixed output { min-width: 28ch; }
+#demo-pions [data-ctl="pluck"] { border-color: var(--accent); color: var(--accent); font-weight: 600; }
+#demo-pions [data-ctl="pluck"]:hover { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+@media (max-width: 519px) {
+  .demo__stage--pions { aspect-ratio: 4 / 3; }
+  .demo__stage--pions-charts { height: auto; aspect-ratio: 1.1 / 1; }
+  #demo-pions .demo__range--fixed output { min-width: 0; }
+}

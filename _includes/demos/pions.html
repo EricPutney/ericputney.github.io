@@ -1,0 +1,18 @@
+{%- comment -%}Interactive figure "pions": shared by demos.html and the homepage publication list (include with n="…" to number it). All copy is DRAFT.{%- endcomment -%}
+<figure class="demo" id="demo-pions">
+    <div class="demo__head">{% if include.n %}<span class="mono">Fig. {{ include.n }}</span>{% endif %}<h3>Dark radiation sticks together</h3></div>
+    <div class="demo__stage demo__stage--pions">
+      <canvas aria-label="Two boxes of particles given the same squeeze: neutrinos, which never collide, on the left, and colliding dark pions on the right; tap the boxes to squeeze again"></canvas>
+    </div>
+    <div class="demo__controls">
+      <label class="demo__range demo__range--fixed"><span>Collisions</span><input type="range" min="0" max="1" step="0.01" value="0.83" data-ctl="stick"><output class="mono" data-out="stick">~100 per trip across the box</output></label>
+      <span class="demo__spacer"></span>
+      <button type="button" class="button button--small" data-ctl="pluck">Squeeze</button>
+    </div>
+    <div class="demo__stage demo__stage--pions-charts">
+      <canvas aria-label="Two charts for both gases: the big wave over the 8 seconds after the squeeze, and how much of each ripple size is left"></canvas>
+    </div>
+    {% comment %}DRAFT caption{% endcomment %}
+    <figcaption>Colliding dark pions move together like a fluid, so the big wave rings. Viscosity, their friction, smears small ripples, faster when rarer bumps let particles roam farther. Slide Collisions.
+      <span class="mono">Simulated 2D gas; each bump gives a particle its neighbours' average motion plus random jitter.</span></figcaption>
+  </figure>

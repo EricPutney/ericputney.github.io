@@ -1,0 +1,16 @@
+{%- comment -%}Interactive figure "ruler": shared by demos.html and the homepage publication list (include with n="…" to number it). All copy is DRAFT.{%- endcomment -%}
+<figure class="demo" id="demo-ruler">
+    <div class="demo__head">{% if include.n %}<span class="mono">Fig. {{ include.n }}</span>{% endif %}<h3>The ruler printed on the sky</h3></div>
+    <div class="demo__stage demo__stage--ruler demo__stage--drag">
+      <canvas aria-label="Diagram: us, the oldest light in the sky and a ruler printed on it, above a number line of expansion-rate measurements. Drag the red arc or the red marker to change the amount of extra radiation."></canvas>
+    </div>
+    <div class="demo__controls">
+      <label class="demo__range demo__range--fixed"><span>Extra radiation</span><input type="range" min="0" max="1" step="0.01" value="0.54" data-ctl="dn"><output class="mono" data-out="dn">0.54 (paper’s value)</output></label>
+      <button type="button" class="button button--small" data-ctl="paper" aria-pressed="true">Paper’s 0.54</button>
+      <span class="demo__spacer"></span>
+      <button type="button" class="button button--small" data-ctl="more" aria-expanded="false">Details</button>
+    </div>
+    {% comment %}DRAFT caption{% endcomment %}
+    <figcaption>Two measurements of the universe’s expansion rate disagree. Extra radiation in the early universe shortens the ruler, so it must sit closer, which means faster expansion. Drag the arc.
+      <span class="mono demo__adv">Flat ΛCDM, Planck 2018; angle calibrated to Planck’s 67.4; shifts drawn 4× larger; boxes ±1σ.</span></figcaption>
+  </figure>

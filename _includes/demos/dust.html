@@ -1,0 +1,39 @@
+{%- comment -%}Interactive figure "dust": shared by demos.html and the homepage publication list (include with n="…" to number it). All copy is DRAFT.{%- endcomment -%}
+<figure class="demo" id="demo-dust" data-src="{{ '/assets/data/dust_l22.json' | relative_url }}" data-src-clouds="{{ '/assets/data/dust_clouds50.json' | relative_url }}">
+    <div class="demo__head">{% if include.n %}<span class="mono">Fig. {{ include.n }}</span>{% endif %}<h3>Sweeping the dust away</h3></div>
+    <div class="demo__stage demo__stage--dust">
+      <canvas aria-label="Model stars drifting around the Sun, seen from above, on the whole sky, or in a close-up of one real dust cloud; the real dust and any dust you paint hide the stars behind it"></canvas>
+    </div>
+    <div class="demo__controls">
+      <div class="seg" role="radiogroup" aria-label="Viewpoint">
+        <button type="button" role="radio" aria-checked="true" data-view="top">From above</button>
+        <button type="button" role="radio" aria-checked="false" data-view="sky">Sky</button>
+        <button type="button" role="radio" aria-checked="false" data-view="zoom">Cloud close-up</button>
+      </div>
+      <div class="seg" role="radiogroup" aria-label="Show">
+        <button type="button" role="radio" aria-checked="true" data-mode="observed">What Gaia sees</button>
+        <button type="button" role="radio" aria-checked="false" data-mode="reveal" class="demo__adv">Find the dust</button>
+        <button type="button" role="radio" aria-checked="false" data-mode="swept">Sweep dust away</button>
+      </div>
+      <span class="demo__spacer"></span>
+      <button type="button" class="button button--small" data-ctl="more" aria-expanded="false">Details</button>
+    </div>
+    <div class="demo__controls demo__adv">
+      <span class="demo__read">Close-up of</span>
+      <div class="seg" role="radiogroup" aria-label="Cloud for the close-up">
+        <button type="button" role="radio" aria-checked="true" data-cloud="California">California</button>
+        <button type="button" role="radio" aria-checked="false" data-cloud="Vela A">Vela A</button>
+        <button type="button" role="radio" aria-checked="false" data-cloud="Cygnus X North">Cygnus X</button>
+      </div>
+    </div>
+    <div class="demo__controls demo__controls--reads">
+      <span class="demo__read demo__read--strong">seen by the Gaia space telescope<output class="mono" data-out="seen">…</output></span>
+      <span class="demo__read">hidden by dust<output class="mono" data-out="hid">…</output></span>
+      <span class="demo__spacer"></span>
+      <button type="button" class="button button--small" data-ctl="clear" hidden>Clear paint</button>
+    </div>
+    {% comment %}DRAFT caption{% endcomment %}
+    <figcaption>Dust hides stars from Gaia; the missing stars give it away, and the paper puts them back. Drag to paint dust; stack strokes and even the brightest stars vanish.
+      <span class="mono">Dust: Lallement et al. 2022 map, via G-Tomo; stars: a model disk; close-up stars illustrative.</span></figcaption>
+    <p class="demo__note"></p>
+  </figure>

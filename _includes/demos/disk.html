@@ -1,0 +1,28 @@
+{%- comment -%}Interactive figure "disk": shared by demos.html and the homepage publication list (include with n="…" to number it). All copy is DRAFT.{%- endcomment -%}
+<figure class="demo" id="demo-disk" data-src="{{ '/assets/data/gaia_phase_spiral.json' | relative_url }}">
+    <div class="demo__head">{% if include.n %}<span class="mono">Fig. {{ include.n }}</span>{% endif %}<h3>Weighing the disk with bobbing stars</h3></div>
+    <div class="demo__stage demo__stage--wide">
+      <canvas aria-label="Left: a simulated slice through the Milky Way's disk, edge on, with a red star bobbing up and down beside its twin in a galaxy without dark matter. Right: the same stars by height and speed or, switched to real stars, 4.2 million stars from the Gaia space telescope, coloured by whether they orbit faster or slower than similar stars, which shows a spiral"></canvas>
+    </div>
+    <div class="demo__controls">
+      <label class="demo__range"><span>Local dark matter</span><input type="range" min="0" max="1" step="0.01" value="0.32" data-ctl="rho"><output class="mono" data-out="rho">0.32 GeV/cm³</output><span class="demo__gloss" data-out="rhogloss">about a third of a proton’s mass per cm³, near the Sun</span></label>
+      <button type="button" class="button button--small" data-ctl="gaia" title="Gaia’s value: 0.32 ± 0.03 GeV/cm³">Gaia’s 0.32</button>
+      <span class="demo__spacer"></span>
+      <button type="button" class="button button--small" data-ctl="nudge">Kick the disk</button>
+      <button type="button" class="button button--small" data-ctl="reset">Settle</button>
+    </div>
+    <div class="demo__controls demo__controls--reads">
+      <span class="demo__lead">Right panel</span>
+      <div class="seg" role="radiogroup" aria-label="Right panel">
+        <button type="button" role="radio" aria-checked="true" data-view="model">Simulated stars</button>
+        <button type="button" role="radio" aria-checked="false" data-view="gaia">Real stars (Gaia)</button>
+      </div>
+      <span class="demo__spacer"></span>
+      <button type="button" class="button button--small is-away" data-ctl="ffwd" disabled>Skip ahead</button>
+    </div>
+    <output class="demo__sr" data-out="since" aria-live="off"></output><output class="demo__sr" data-out="bin" aria-live="polite"></output>
+    {% comment %}DRAFT: 30 words (counting 0.32 and GeV/cm³ separately); fine print 15 words.{% endcomment %}
+    <figcaption>Slide local dark matter up: the red star climbs less than its dashed twin. Stars seen by Gaia, a space telescope, give 0.32 GeV/cm³. Kick, then switch to real stars.
+      <span class="mono">Stars and gas fixed (Bovy 2015); Gaia DR3; σ<sub>z</sub>=22&nbsp;km/s; star launched at 40&nbsp;km/s.</span></figcaption>
+    <p class="demo__note"></p>
+  </figure>

@@ -1,0 +1,31 @@
+/* Fig. N: the local potential in 3D (a WebGL canvas plus a 2D overlay for labels) */
+.demo__stage--turn canvas { cursor: grab; touch-action: pan-y; }   /* a vertical swipe that starts on the picture scrolls the page; the model turns on sideways drags */
+.demo__stage--turn.is-dragging canvas { cursor: grabbing; }
+.demo__stage--turn .p3d-overlay { position: absolute; inset: 0; pointer-events: none; }
+#demo-potential3d .p3d-home { position: absolute; top: 8px; left: 8px; z-index: 2; padding: 0.4rem 0.7rem; font-size: 0.8rem; background: var(--surface); }
+#demo-potential3d .p3d-home[hidden] { display: none; }
+
+/* the readout line: one short line that never wraps, and keeps its height */
+#demo-potential3d .demo__controls--reads { min-height: 1.6rem; }
+#demo-potential3d .demo__read { white-space: nowrap; }
+#demo-potential3d .demo__read output { display: inline; min-width: 0; margin: 0 0.3rem 0 0; }
+#demo-potential3d .demo__read output:empty { display: none; }
+#demo-potential3d .p3d-unit { margin-right: 0.4rem; font-size: 0.75rem; color: var(--text-3); }   /* the unit rides small and grey beside its number */
+#demo-potential3d .p3d-unit:empty { display: none; }
+#demo-potential3d .demo__range output { min-width: 12ch; text-align: right; }
+#demo-potential3d .demo__range > span { min-width: 4.2em; }
+
+/* the Details panel (look, colours, the unit note) */
+#demo-potential3d .p3d-unitnote { flex: 1 1 100%; margin: 0; font-size: 0.85rem; line-height: 1.45; color: var(--text-3); }
+
+@media (max-width: 519px) {
+  /* the slider gets the full row: label and number above, the track below it */
+  #demo-potential3d .demo__range { grid-template-columns: 1fr auto; }
+  #demo-potential3d .demo__range > span { grid-column: 1; grid-row: 1; }
+  #demo-potential3d .demo__range output { grid-column: 2; grid-row: 1; min-width: 0; }
+  #demo-potential3d .demo__range input[type="range"] { grid-column: 1 / -1; grid-row: 2; min-height: 2.2rem; }
+  /* row two: the view switch and Details; row three: the one control that belongs to the view */
+  #demo-potential3d .seg[data-group="view"] { order: 1; width: auto; flex: 1 1 auto; }
+  #demo-potential3d [data-ctl="more"] { order: 2; flex: 0 0 auto; }
+  #demo-potential3d [data-ctl="cut"], #demo-potential3d .seg[data-group="plane"] { order: 3; flex: 1 1 100%; min-height: 2.4rem; }
+}

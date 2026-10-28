@@ -2,11 +2,13 @@
 # Fields: title, authors (list, in paper order), year, venue (optional),
 #         arxiv (optional), doi (optional), url (optional, e.g. workshop PDF),
 #         summary (optional one-liner in your own words),
-#         figure (path under /images/papers, shown in a panel at the right), figure_alt (alt text).
+#         figure (path under /images/papers, shown in a panel at the right), figure_alt (alt text),
+#         demos (optional list of interactive figures from _data/demos.yml, shown as chips under the paper).
 - title: "Dark Radiation Sticks Together: Dark QCD and the Hubble Tension"
   authors: [Matthew R. Buckley, Nicolas Fernandez, Eric Putney]
   year: 2026
   arxiv: "2609.16120"
+  demos: [darkqcd, pions, ruler, profile]   # interactive figures under this paper (see _data/demos.yml)
   # DRAFT summary (written by Claude from the abstract, 2026-09-28). Rewrite in your own words before publishing.
   summary: >-
     We introduce a dark-sector version of QCD in which light dark quarks confine at the MeV scale
@@ -20,6 +22,7 @@
   authors: [Eric Putney, David Shih, Sung Hak Lim, Matthew R. Buckley]
   year: 2025
   arxiv: "2512.09989"
+  demos: [disk, clearpotential, potential3d, orbit]
   # Your summary from the June 2026 site.
   summary: >-
     Using our dust-correction technique from arXiv:2412.14236, ClearPotential upgrades the
@@ -50,6 +53,7 @@
   authors: [Eric Putney, David Shih, Sung Hak Lim, Matthew R. Buckley]
   year: 2024
   arxiv: "2412.14236"
+  demos: [dust]
   # Your summary from the June 2026 site.
   summary: >-
     Companion to ClearPotential. Optical surveys like Gaia are blocked by dust in the midplane of

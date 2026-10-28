@@ -1,0 +1,29 @@
+{%- comment -%}Interactive figure "orbit": shared by demos.html and the homepage publication list (include with n="…" to number it). All copy is DRAFT.{%- endcomment -%}
+<figure class="demo demo--narrow demo--orbit" id="demo-orbit" data-src="{{ '/assets/data/clearpotential_phi_midplane.json' | relative_url }}">
+    {% comment %}DRAFT title{% endcomment %}
+    <div class="demo__head">{% if include.n %}<span class="mono">Fig. {{ include.n }}</span>{% endif %}<h3>Flick a star through the Milky Way’s gravity</h3></div>
+    <div class="demo__stage demo__stage--square demo__stage--orbit demo__stage--flick">
+      <canvas aria-label="A map of the Milky Way’s gravity within 3.5 kpc of the Sun, darker where gravity’s well is deeper, drawn in the Sun’s frame, which turns round the Galaxy with the Sun. Stars flicked by the visitor orbit in it. A small inset shows the whole Galaxy and this map riding round the Sun’s orbit. A switch redraws the same stars in the Galactic frame, orbiting the Galactic centre."></canvas>
+    </div>
+    <div class="demo__controls">
+      <div class="seg" role="radiogroup" aria-label="Frame">
+        <button type="button" role="radio" aria-checked="true" data-frame="sun" title="Ride round the Galaxy with the Sun">Sun’s frame</button>
+        <button type="button" role="radio" aria-checked="false" data-frame="gal" title="Watch from the Galaxy, which holds still">Galactic frame</button>
+      </div>
+      <span class="demo__spacer"></span>
+      <button type="button" class="button button--small" data-ctl="more" aria-expanded="false">Details</button>
+      <button type="button" class="button button--small" data-ctl="clear">Clear</button>
+    </div>
+    <div class="demo__controls demo__controls--reads">
+      <span class="demo__read">Sun’s speed round the Galaxy<output class="mono" data-out="vc">–</output></span>
+      <span class="demo__read demo__read--time">since the flick<output class="mono" data-out="t">not yet</output></span>
+      <span class="demo__read demo__adv">orbit speed at the pointer<output class="mono" data-out="vp">–</output></span>
+    </div>
+    {% comment %}DRAFT details key{% endcomment %}
+    <p class="demo__key demo__adv">Dark arc: the Sun’s path since the flick. Open ring: a star left the map and is no longer followed. Inset: grey glow = the Galaxy, dashed ring = the Sun’s orbit, square = this map.</p>
+    {% comment %}DRAFT caption{% endcomment %}
+    <figcaption>A flicked star loops because the Sun’s frame, our viewpoint, circles the Galaxy; from the Galactic frame it simply orbits the centre. Drag the map to flick, then switch frames.
+      <span class="mono">Gravity map from the Gaia space telescope (ClearPotential); 1 second = 20 million years.</span>
+      <span class="mono demo__adv">Stars feel the map’s average pull at each distance from the centre.</span></figcaption>
+    <p class="demo__note"></p>
+  </figure>

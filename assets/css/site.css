@@ -326,6 +326,8 @@ mjx-container { overflow-x: auto; overflow-y: hidden; }
   .talk .mono { grid-column: 1 / -1; }
   .pub--with-figure { grid-template-columns: 1fr; }
   .pub__figure { grid-column: 1; grid-row: auto; justify-self: start; width: 100%; max-width: 20rem; margin-top: 0.75rem; }
+  .pub__figure { order: 1; }   /* the paper's key figure before its interactive figures */
+  .pub__demos { order: 2; }
   .pubs__label { padding-top: 0; }
   .cv { grid-template-columns: 1fr; }
   .gallery { grid-template-columns: 1fr; }
@@ -337,3 +339,18 @@ mjx-container { overflow-x: auto; overflow-y: hidden; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
+
+/* Interactive figures under a paper: chips open one live figure at a time (assets/js/pub-demos.js; figures from _includes/demos/) */
+.pub__demos { grid-column: 1 / -1; margin-top: 0.85rem; }
+.pub__demos-label { font-size: 0.8rem; color: var(--text-3); margin-bottom: 0.4rem; }
+.pub__cards { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.pub__card { font: inherit; font-size: 0.85rem; line-height: 1.25; padding: 0.35rem 0.75rem; border: 1px solid var(--border-strong); border-radius: var(--radius); background: var(--surface); color: var(--text-2); cursor: pointer; transition: color var(--t) var(--ease), border-color var(--t) var(--ease), background var(--t) var(--ease); }
+.pub__card:hover { color: var(--accent); border-color: var(--accent); }
+.pub__card[aria-expanded="true"] { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }
+.pub__card.is-loading { cursor: progress; opacity: 0.75; }
+.pub__play { font-size: 0.7em; margin-right: 0.4rem; position: relative; top: -0.05em; }
+.pub__demo { margin-top: 1rem; }
+.pub__demo .demo { margin: 0; }
+.pub__demo .demo__head { display: none; }
+@media (min-width: 640px) { .pub__demo { margin-left: -6.5rem; } }
+@media (pointer: coarse) { .pub__card { min-height: 44px; } }

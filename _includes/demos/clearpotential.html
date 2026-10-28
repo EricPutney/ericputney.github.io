@@ -1,0 +1,36 @@
+{%- comment -%}Interactive figure "clearpotential": shared by demos.html and the homepage publication list (include with n="…" to number it). All copy is DRAFT.{%- endcomment -%}
+<figure class="demo" id="demo-clearpotential">
+    <div class="demo__head">{% if include.n %}<span class="mono">Fig. {{ include.n }}</span>{% endif %}<h3>How ClearPotential weighs the disk</h3></div>
+    {% comment %}DRAFT headline{% endcomment %}
+    <p class="demo__headline">Weighing the unseen dark matter in our galaxy’s disk from how its stars move</p>
+    <div class="demo__stage demo__stage--wide">
+      <canvas aria-label="Model stars by height and vertical speed; a computer learns how they crowd by bending a bell-curve grid onto them, fits the gravity that keeps them in balance, and weighs the mass within each height, ordinary matter plus dark matter; tap the stars to kick the disk"></canvas>
+    </div>
+    <div class="demo__controls">
+      <div class="seg cp-steps" role="radiogroup" aria-label="Step">
+        <button type="button" role="radio" aria-checked="true" data-stage="0">Stars</button>
+        <button type="button" role="radio" aria-checked="false" data-stage="1">Learn density</button>
+        <button type="button" role="radio" aria-checked="false" data-stage="2">Fit gravity</button>
+        <button type="button" role="radio" aria-checked="false" data-stage="3">Weigh</button>
+      </div>
+      <button type="button" class="button button--small cp-kick" data-ctl="kick">Kick the disk</button>
+      <span class="demo__spacer"></span>
+      <button type="button" class="button button--small" data-ctl="resample">New stars</button>
+      <button type="button" class="button button--small" data-ctl="more" aria-expanded="false">Details</button>
+    </div>
+    <div class="demo__controls demo__adv cp-count">
+      <span id="cp-n-label">Number of stars</span>
+      <div class="seg" role="radiogroup" aria-labelledby="cp-n-label">
+        <button type="button" role="radio" aria-checked="false" data-n="2000">2,000</button>
+        <button type="button" role="radio" aria-checked="false" data-n="8000">8,000</button>
+        <button type="button" role="radio" aria-checked="true" data-n="32000">32,000</button>
+      </div>
+    </div>
+    <div class="demo__controls demo__controls--reads cp-reads">
+      <span class="demo__read cp-read cp-read--res">imbalance<output class="mono" data-out="res">—</output><span class="cp-hint" data-hint="res"></span></span>
+      <span class="demo__read demo__read--strong cp-read cp-read--dm">dark matter<output class="mono" data-out="dm">—</output><span class="cp-hint" data-hint="dm"></span></span>
+    </div>
+    {% comment %}DRAFT caption{% endcomment %}
+    <figcaption>How settled stars crowd in height and speed reveals the gravity holding them; what ordinary matter can’t explain is dark matter. Step through, then Kick the disk out of balance.
+      <span class="mono">1D toy of the 6D method; normalizing flow, 4 coupling layers; 16×16 network; Poisson’s equation.</span></figcaption>
+  </figure>

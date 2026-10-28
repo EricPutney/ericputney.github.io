@@ -1,0 +1,52 @@
+/* Fig. 5 (#demo-profile), final round 2026-10-28: a plain key above the plot, a plot-only stage, and a Details row
+   (data choice, then the dark QCD parameter panel on its own canvas). Overrides the shared .demo__stage--profile and
+   .demo--rows-all rules in demos.css so the plot never changes size. */
+#demo-profile .demo__stage--profile,
+#demo-profile.demo--rows-all .demo__stage--profile { aspect-ratio: 2.35 / 1; }
+@media (max-width: 519px) {
+  #demo-profile .demo__stage--profile,
+  #demo-profile.demo--rows-all .demo__stage--profile { aspect-ratio: 1 / 1.08; }
+}
+
+/* the key: one lead line, then the two models with their numbers (the same lines in both SH0ES states) */
+#demo-profile .pf-key { margin: -0.2rem 0 0.8rem; }
+#demo-profile .pf-lead { margin: 0 0 0.2rem; font-size: 0.95rem; line-height: 1.4; color: var(--text-2); white-space: nowrap; }
+#demo-profile .pf-items { display: grid; grid-template-columns: auto auto auto auto auto auto; justify-content: start; align-items: baseline; column-gap: 0.55rem; row-gap: 0.15rem; margin: 0; }
+#demo-profile .pf-item { display: contents; }
+#demo-profile .pf-sw { width: 1.9rem; height: 0.75rem; align-self: center; overflow: visible; }
+#demo-profile .pf-sw line { stroke: var(--text-2); stroke-width: 2.5; }
+#demo-profile .pf-item--dqcd .pf-sw line { stroke: var(--accent); }
+#demo-profile .pf-name { font-size: 1rem; color: var(--text); white-space: nowrap; }
+#demo-profile .pf-num { display: inline-block; min-width: 4.4ch; margin-right: 1.4rem; padding: 0 0.15rem; border-radius: 4px; font-family: var(--font-mono); font-size: 1.3rem; font-weight: 600; color: var(--text-2); font-variant-numeric: tabular-nums; }
+#demo-profile .pf-item--dqcd .pf-num { color: var(--accent); }
+#demo-profile .pf-0 { font-family: var(--font-mono); font-size: 0.92em; }   /* a zero that cannot read as the letter O */
+#demo-profile sub { line-height: 0; }   /* H0's subscript must not make its line taller (the key would jump when SH0ES is switched) */
+@media (max-width: 519px) {
+  #demo-profile .pf-items { grid-template-columns: auto auto auto; }
+  #demo-profile .pf-num { margin-right: 0; }
+}
+@media (prefers-reduced-motion: no-preference) { #demo-profile .pf-num.is-flash { animation: pf-flash 1.2s ease-out; } }
+@keyframes pf-flash { 0%, 35% { background: var(--accent-soft); } 100% { background: transparent; } }
+
+/* controls: room at the right edge, a taller hit area for the slider, the Details row */
+#demo-profile .demo__controls { padding-right: 0.4rem; font-size: 0.95rem; }
+#demo-profile .demo__range input[type="range"] { height: 1.75rem; }
+#demo-profile .demo__range output { min-width: 4ch; text-align: right; font-size: 0.9rem; }
+#demo-profile .pf-data { margin-top: 1rem; padding-top: 0.85rem; border-top: 1px solid var(--border); }
+#demo-profile .pf-dlabel { color: var(--text); font-weight: 500; }
+#demo-profile .pf-dgloss { flex-basis: 100%; margin: -0.2rem 0 0; font-size: 0.92rem; line-height: 1.5; color: var(--text-2); }
+#demo-profile [data-out="gloss"] { min-height: 1.5em; }   /* the longest gloss's line count, so a data button never moves what is below */
+@media (max-width: 519px) { #demo-profile [data-out="gloss"] { min-height: 3em; } }
+#demo-profile .pf-thick { display: flex; align-items: center; gap: 0.55rem; margin-top: -0.35rem; }
+#demo-profile .pf-thick line { stroke: var(--text-3); stroke-width: 7; stroke-linecap: round; opacity: 0.6; }
+
+/* the parameter panel: header with the rows menu, then its canvas (height set by the script) */
+#demo-profile .pf-panel { margin-top: 1rem; }
+#demo-profile .pf-phead { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem 1rem; margin-bottom: 0.55rem; font-size: 1rem; color: var(--text); }
+#demo-profile .pf-pstage { aspect-ratio: auto; height: 10rem; }
+#demo-profile .pf-pstage canvas { cursor: ew-resize; touch-action: pan-y; }
+#demo-profile .demo__select { font-size: 0.9rem; padding: 0.4rem 0.6rem; border-radius: var(--radius); background: var(--surface); color: var(--text); cursor: pointer; }
+
+/* caption: larger type */
+#demo-profile figcaption { font-size: 1rem; }
+#demo-profile figcaption .mono { font-size: 0.85rem; }

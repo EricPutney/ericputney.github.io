@@ -1,0 +1,43 @@
+/* Fig. "How ClearPotential weighs the disk" (demo-clearpotential). Loaded after demos.css. */
+
+/* Kick is the payoff: accent outline, and one soft pulse when the first answer has settled */
+#demo-clearpotential .cp-kick { border-color: var(--accent); color: var(--accent); }
+#demo-clearpotential .cp-kick:hover { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+#demo-clearpotential .cp-kick.cp-invite { animation: cp-pulse 1.4s ease-in-out 3; }
+@keyframes cp-pulse { 0%, 100% { box-shadow: 0 0 0 0 transparent; } 50% { box-shadow: 0 0 0 5px var(--accent-soft); background: var(--accent-soft); } }
+@media (prefers-reduced-motion: reduce) { #demo-clearpotential .cp-kick.cp-invite { animation: none; } }
+
+/* bounded progress on the step buttons: an accent bar that fills as each step's training runs (--p, 0 to 1, set by the script) */
+#demo-clearpotential .cp-steps button[data-stage] {
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-repeat: no-repeat; background-position: 0 100%;
+  background-size: calc(var(--p, 0) * 100%) 3px;
+}
+
+#demo-clearpotential .demo__controls { column-gap: 0.75rem; }
+
+/* readouts in fixed slots, so nothing slides sideways as the numbers change */
+#demo-clearpotential .cp-reads { display: grid; grid-template-columns: 15rem minmax(0, 1fr); column-gap: 1.25rem; row-gap: 0.2rem; align-items: baseline; }
+#demo-clearpotential .cp-read { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 0.4rem; min-width: 0; }
+#demo-clearpotential .cp-read output { margin-left: 0; }
+#demo-clearpotential [data-out="res"] { min-width: 4ch; }
+#demo-clearpotential [data-out="dm"] { min-width: 19ch; }
+#demo-clearpotential .cp-hint { color: var(--text-2); font-size: 0.85rem; }
+/* where the slot is too narrow for the longest hint, the hint always takes its own line, so the row never changes height */
+#demo-clearpotential .cp-read--dm { container: cpdm / inline-size; }
+@container cpdm (max-width: 35rem) { #demo-clearpotential .cp-read--dm .cp-hint { flex-basis: 100%; min-height: 1.35em; } }
+#demo-clearpotential.is-kicked [data-out="dm"], #demo-clearpotential.is-kicked [data-hint="dm"] { color: var(--accent); }
+
+/* Details: the star count, labelled in its own row */
+#demo-clearpotential .cp-count { margin-top: 0.6rem; gap: 0.6rem; }
+
+/* Details also adds the estimates strip along the bottom of the canvas */
+#demo-clearpotential.demo--more .demo__stage--wide { aspect-ratio: 2 / 1.14; }
+
+@media (max-width: 519px) {
+  #demo-clearpotential.demo--more .demo__stage--wide { aspect-ratio: 1 / 1.95; }
+  #demo-clearpotential .cp-kick { flex-grow: 1.4; }
+  #demo-clearpotential .cp-reads { grid-template-columns: minmax(0, 1fr); }
+  #demo-clearpotential .cp-count { flex-wrap: nowrap; }
+  #demo-clearpotential .cp-count .seg { width: auto; flex: 1 1 auto; }
+}
